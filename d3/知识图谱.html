@@ -1,0 +1,1340 @@
+  
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>d3实现知识图谱.html</title>
+    
+    <script type="text/javascript" src="d3.min.js">
+	 <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+	</script>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=GBK">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+  </head>
+  
+  <body>
+    <svg width="960" height="600"></svg>
+    <script>
+    	var marge = {top:5,bottom:10,left:5,right:10}
+    	var svg = d3.select("svg")
+    	var width = svg.attr("width")
+    	var height = svg.attr("height")
+    	var g = svg.append("g")
+    		.attr("transform","translate("+marge.top+","+marge.left+")");
+    		
+    	//准备数据
+    	var nodes = [
+    		        {
+            "id": 2019270,
+            "category": 0,
+            "name": "2019270",
+            "label": "赵东元",
+            "symbol": "domain_logo/2019270.jpg",
+            "symbolSize": 30,
+            "ignore": false,
+            "flag": false
+        },
+        {
+            "id": 1000274611,
+            "category": 1,
+            "name": "1000274611",
+            "label": "synthesis",
+            "symbol": "circle",
+            "symbolSize": 15,
+            "ignore": false,
+            "flag": false
+        },
+        {
+            "id": 1000300677,
+            "category": 1,
+            "name": "1000300677",
+            "label": "mesoporous materials",
+            "symbol": "circle",
+            "symbolSize": 15,
+            "ignore": false,
+            "flag": false
+        },
+        {
+            "id": 1000458678,
+            "category": 1,
+            "name": "1000458678",
+            "label": "jigs(templates)",
+            "symbol": "circle",
+            "symbolSize": 15,
+            "ignore": false,
+            "flag": false
+        },
+        {
+            "id": 1000126595,
+            "category": 1,
+            "name": "1000126595",
+            "label": "Adsorption",
+            "symbol": "circle",
+            "symbolSize": 15,
+            "ignore": false,
+            "flag": false
+        },
+        {
+            "id": 1000247899,
+            "category": 1,
+            "name": "1000247899",
+            "label": "Self-assembly",
+            "symbol": "circle",
+            "symbolSize": 15,
+            "ignore": false,
+            "flag": false
+        },
+        {
+            "id": 1000306185,
+            "category": 1,
+            "name": "1000306185",
+            "label": "Carbon",
+            "symbol": "circle",
+            "symbolSize": 15,
+            "ignore": false,
+            "flag": false
+        },
+        {
+            "id": 2031811,
+            "category": 2,
+            "name": "2031811",
+            "label": "朱海亮",
+            "symbol": "domain_logo/2031811.jpg",
+            "symbolSize": 19,
+            "ignore": false,
+            "flag": false
+        },
+        {
+            "id": 1980612,
+            "category": 2,
+            "name": "1980612",
+            "label": "屠树江",
+            "symbol": "domain_logo/1980612.jpg",
+            "symbolSize": 19,
+            "ignore": false,
+            "flag": false
+        },
+        {
+            "id": 806106,
+            "category": 2,
+            "name": "806106",
+            "label": "李正名",
+            "symbol": "supplement/806106.jpg",
+            "symbolSize": 19,
+            "ignore": false,
+            "flag": false
+        },
+        {
+            "id": 413734,
+            "category": 2,
+            "name": "413734",
+            "label": "Kläus Müllen",
+            "symbol": "supplement/36047278500.jpg",
+            "symbolSize": 19,
+            "ignore": false,
+            "flag": false
+        },
+        {
+            "id": 303495,
+            "category": 2,
+            "name": "303495",
+            "label": "江雷",
+            "symbol": "expert_logo/2019-04/2019-04-11-22-44-01__22d22852-4ec6-4510-ab11-8f8b4c2cceb3.jpg\n",
+            "symbolSize": 19,
+            "ignore": false,
+            "flag": false
+        },
+        {
+            "id": 299049,
+            "category": 2,
+            "name": "299049",
+            "label": "施剑林",
+            "symbol": "P020130625585710417152.jpg",
+            "symbolSize": 19,
+            "ignore": false,
+            "flag": false
+        },
+        {
+            "id": 132245,
+            "category": 2,
+            "name": "132245",
+            "label": "万立骏",
+            "symbol": "expert_logo/2018-12/2018-12-24-09-14-12__e74c5d2b-963e-49f3-bc8f-7f8a85aebb12.jpg",
+            "symbolSize": 19,
+            "ignore": false,
+            "flag": false
+        },
+        {
+            "id": 3621,
+            "category": 2,
+            "name": "3621",
+            "label": "山内悠輔",
+            "symbol": "supplement/3621.jpg",
+            "symbolSize": 19,
+            "ignore": false,
+            "flag": false
+        },
+        {
+            "id": 2132629,
+            "category": 2,
+            "name": "2132629",
+            "label": "Mehrorang Ghaedi",
+            "symbol": "supplement/2132629.jpg",
+            "symbolSize": 19,
+            "ignore": false,
+            "flag": false
+        },
+        {
+            "id": 2139023,
+            "category": 2,
+            "name": "2139023",
+            "label": "韩润平",
+            "symbol": "domain_logo/2139023.jpg",
+            "symbolSize": 19,
+            "ignore": false,
+            "flag": false
+        },
+        {
+            "id": 2043623,
+            "category": 2,
+            "name": "2043623",
+            "label": "张全兴",
+            "symbol": "expert_logo/2018-12/2018-12-24-09-43-42__f56e98ce-b5a7-45e2-8349-0952f064cf40.jpg",
+            "symbolSize": 19,
+            "ignore": false,
+            "flag": false
+        },
+        {
+            "id": 2035906,
+            "category": 2,
+            "name": "2035906",
+            "label": "王如竹",
+            "symbol": "sjtu/机械与动力工程学院/2013121285130.jpg",
+            "symbolSize": 19,
+            "ignore": false,
+            "flag": false
+        },
+        {
+            "id": 1970956,
+            "category": 2,
+            "name": "1970956",
+            "label": "Gordon Mckay",
+            "symbol": "supplement/1970956.jpg",
+            "symbolSize": 19,
+            "ignore": false,
+            "flag": false
+        },
+        {
+            "id": 1962279,
+            "category": 2,
+            "name": "1962279",
+            "label": "高宝玉",
+            "symbol": "domain_logo/1962279.jpg",
+            "symbolSize": 19,
+            "ignore": false,
+            "flag": false
+        },
+        {
+            "id": 731212,
+            "category": 2,
+            "name": "731212",
+            "label": "曲久辉",
+            "symbol": "domain_logo/731212.jpg",
+            "symbolSize": 19,
+            "ignore": false,
+            "flag": false
+        },
+        {
+            "id": 383394,
+            "category": 2,
+            "name": "383394",
+            "label": "Alírio egídio Rodrigues",
+            "symbol": "expert_logo/2018-02/2018-02-02-13-20-32__ab72b3ed-7dba-4696-a34c-6d026561dfd1.jpg",
+            "symbolSize": 19,
+            "ignore": false,
+            "flag": false
+        },
+        {
+            "id": 221209,
+            "category": 2,
+            "name": "221209",
+            "label": "李爱民",
+            "symbol": "domain_logo/221209.jpg",
+            "symbolSize": 19,
+            "ignore": false,
+            "flag": false
+        },
+        {
+            "id": 1919917,
+            "category": 2,
+            "name": "1919917",
+            "label": "Samuel Stupp",
+            "symbol": "expert_logo/2018-01/2018-01-23-16-22-15__31f3d607-2119-48ef-8d78-489056c1519e.jpg",
+            "symbolSize": 19,
+            "ignore": false,
+            "flag": false
+        },
+        {
+            "id": 1000445667,
+            "category": 3,
+            "name": "1000445667",
+            "label": "crystal structure",
+            "symbol": "circle",
+            "symbolSize": 9,
+            "ignore": false,
+            "flag": false
+        },
+        {
+            "id": 1000395305,
+            "category": 3,
+            "name": "1000395305",
+            "label": "Kinetics",
+            "symbol": "circle",
+            "symbolSize": 9,
+            "ignore": false,
+            "flag": false
+        },
+        {
+            "id": 1000135838,
+            "category": 3,
+            "name": "1000135838",
+            "label": "Ion Exchange",
+            "symbol": "circle",
+            "symbolSize": 9,
+            "ignore": false,
+            "flag": false
+        },
+        {
+            "id": 1000158107,
+            "category": 3,
+            "name": "1000158107",
+            "label": "Solid Phase Extraction",
+            "symbol": "circle",
+            "symbolSize": 9,
+            "ignore": false,
+            "flag": false
+        },
+        {
+            "id": 1000502030,
+            "category": 3,
+            "name": "1000502030",
+            "label": "Activated carbon",
+            "symbol": "circle",
+            "symbolSize": 9,
+            "ignore": false,
+            "flag": false
+        },
+        {
+            "id": 1000244084,
+            "category": 3,
+            "name": "1000244084",
+            "label": "Coagulation",
+            "symbol": "circle",
+            "symbolSize": 9,
+            "ignore": false,
+            "flag": false
+        },
+        {
+            "id": 1000142889,
+            "category": 3,
+            "name": "1000142889",
+            "label": "Solar Energy",
+            "symbol": "circle",
+            "symbolSize": 9,
+            "ignore": false,
+            "flag": false
+        },
+        {
+            "id": 1000436994,
+            "category": 3,
+            "name": "1000436994",
+            "label": "Experiments",
+            "symbol": "circle",
+            "symbolSize": 9,
+            "ignore": false,
+            "flag": false
+        },
+        {
+            "id": 1000493085,
+            "category": 3,
+            "name": "1000493085",
+            "label": "refrigeration",
+            "symbol": "circle",
+            "symbolSize": 9,
+            "ignore": false,
+            "flag": false
+        },
+        {
+            "id": 1000137705,
+            "category": 3,
+            "name": "1000137705",
+            "label": "Mathematical Model",
+            "symbol": "circle",
+            "symbolSize": 9,
+            "ignore": false,
+            "flag": false
+        },
+        {
+            "id": 1000131662,
+            "category": 3,
+            "name": "1000131662",
+            "label": "Separation",
+            "symbol": "circle",
+            "symbolSize": 9,
+            "ignore": false,
+            "flag": false
+        },
+        {
+            "id": 1000156005,
+            "category": 3,
+            "name": "1000156005",
+            "label": "Regenerative Medicine",
+            "symbol": "circle",
+            "symbolSize": 9,
+            "ignore": false,
+            "flag": false
+        },
+        {
+            "id": 1000128240,
+            "category": 3,
+            "name": "1000128240",
+            "label": "Biocompatible Materials",
+            "symbol": "circle",
+            "symbolSize": 9,
+            "ignore": false,
+            "flag": false
+        },
+        {
+            "id": 1000139660,
+            "category": 3,
+            "name": "1000139660",
+            "label": "Peptides",
+            "symbol": "circle",
+            "symbolSize": 9,
+            "ignore": false,
+            "flag": false
+        },
+        {
+            "id": 1000496662,
+            "category": 3,
+            "name": "1000496662",
+            "label": "Arsenic",
+            "symbol": "circle",
+            "symbolSize": 9,
+            "ignore": false,
+            "flag": false
+        },
+        {
+            "id": 1000450465,
+            "category": 3,
+            "name": "1000450465",
+            "label": "water treatment",
+            "symbol": "circle",
+            "symbolSize": 9,
+            "ignore": false,
+            "flag": false
+        },
+        {
+            "id": 1000277580,
+            "category": 3,
+            "name": "1000277580",
+            "label": "insecticidal activity",
+            "symbol": "circle",
+            "symbolSize": 9,
+            "ignore": false,
+            "flag": false
+        },
+        {
+            "id": 1000274104,
+            "category": 3,
+            "name": "1000274104",
+            "label": "herbicidal activity",
+            "symbol": "circle",
+            "symbolSize": 9,
+            "ignore": false,
+            "flag": false
+        },
+        {
+            "id": 1000303074,
+            "category": 3,
+            "name": "1000303074",
+            "label": "Biological activity",
+            "symbol": "circle",
+            "symbolSize": 9,
+            "ignore": false,
+            "flag": false
+        },
+        {
+            "id": 1000137428,
+            "category": 3,
+            "name": "1000137428",
+            "label": "Methylene Blue",
+            "symbol": "circle",
+            "symbolSize": 9,
+            "ignore": false,
+            "flag": false
+        },
+        {
+            "id": 1000417501,
+            "category": 3,
+            "name": "1000417501",
+            "label": "Regeneration",
+            "symbol": "circle",
+            "symbolSize": 9,
+            "ignore": false,
+            "flag": false
+        },
+        {
+            "id": 1000502046,
+            "category": 3,
+            "name": "1000502046",
+            "label": "Adsorption towers",
+            "symbol": "circle",
+            "symbolSize": 9,
+            "ignore": false,
+            "flag": false
+        },
+        {
+            "id": 1000435569,
+            "category": 3,
+            "name": "1000435569",
+            "label": "Acid dyes",
+            "symbol": "circle",
+            "symbolSize": 9,
+            "ignore": false,
+            "flag": false
+        },
+        {
+            "id": 1000464310,
+            "category": 3,
+            "name": "1000464310",
+            "label": "POLYMERIC ADSORBENT",
+            "symbol": "circle",
+            "symbolSize": 9,
+            "ignore": false,
+            "flag": false
+        },
+        {
+            "id": 1000279495,
+            "category": 3,
+            "name": "1000279495",
+            "label": "microwave irradiation",
+            "symbol": "circle",
+            "symbolSize": 9,
+            "ignore": false,
+            "flag": false
+        },
+        {
+            "id": 1000300730,
+            "category": 3,
+            "name": "1000300730",
+            "label": "microwave applicators",
+            "symbol": "circle",
+            "symbolSize": 9,
+            "ignore": false,
+            "flag": false
+        },
+        {
+            "id": 1000539142,
+            "category": 3,
+            "name": "1000539142",
+            "label": "aqueous media",
+            "symbol": "circle",
+            "symbolSize": 9,
+            "ignore": false,
+            "flag": false
+        }
+    	];
+    	
+    	var edges = [
+       {
+            "source": "1000274611",
+            "target": "2019270",
+            "label": "赵东元 使用指纹 'synthesis' 59次",
+            "num": 59,
+            "sameLevel": false
+        },
+        {
+            "source": "1000300677",
+            "target": "2019270",
+            "label": "赵东元 使用指纹 'mesoporous materials' 103次",
+            "num": 103,
+            "sameLevel": false
+        },
+        {
+            "source": "1000458678",
+            "target": "2019270",
+            "label": "赵东元 使用指纹 'jigs(templates)' 22次",
+            "num": 22,
+            "sameLevel": false
+        },
+        {
+            "source": "1000126595",
+            "target": "2019270",
+            "label": "赵东元 使用指纹 'Adsorption' 20次",
+            "num": 20,
+            "sameLevel": false
+        },
+        {
+            "source": "1000247899",
+            "target": "2019270",
+            "label": "赵东元 使用指纹 'Self-assembly' 19次",
+            "num": 19,
+            "sameLevel": false
+        },
+        {
+            "source": "1000306185",
+            "target": "2019270",
+            "label": "赵东元 使用指纹 'Carbon' 18次",
+            "num": 18,
+            "sameLevel": false
+        },
+        {
+            "source": "2031811",
+            "target": "1000274611",
+            "label": "朱海亮 使用指纹 'synthesis' 33次",
+            "num": 33,
+            "sameLevel": false
+        },
+        {
+            "source": "2031811",
+            "target": "1000458678",
+            "label": "朱海亮 使用指纹 'jigs(templates)' 1次",
+            "num": 1,
+            "sameLevel": false
+        },
+        {
+            "source": "2031811",
+            "target": "1000126595",
+            "label": "朱海亮 使用指纹 'Adsorption' 1次",
+            "num": 1,
+            "sameLevel": false
+        },
+        {
+            "source": "1980612",
+            "target": "1000274611",
+            "label": "屠树江 使用指纹 'synthesis' 34次",
+            "num": 34,
+            "sameLevel": false
+        },
+        {
+            "source": "806106",
+            "target": "1000274611",
+            "label": "李正名 使用指纹 'synthesis' 46次",
+            "num": 46,
+            "sameLevel": false
+        },
+        {
+            "source": "413734",
+            "target": "1000306185",
+            "label": "Kläus Müllen 使用指纹 'Carbon' 7次",
+            "num": 7,
+            "sameLevel": false
+        },
+        {
+            "source": "413734",
+            "target": "1000458678",
+            "label": "Kläus Müllen 使用指纹 'jigs(templates)' 1次",
+            "num": 1,
+            "sameLevel": false
+        },
+        {
+            "source": "413734",
+            "target": "1000300677",
+            "label": "Kläus Müllen 使用指纹 'mesoporous materials' 4次",
+            "num": 4,
+            "sameLevel": false
+        },
+        {
+            "source": "413734",
+            "target": "1000274611",
+            "label": "Kläus Müllen 使用指纹 'synthesis' 2次",
+            "num": 2,
+            "sameLevel": false
+        },
+        {
+            "source": "413734",
+            "target": "1000247899",
+            "label": "Kläus Müllen 使用指纹 'Self-assembly' 62次",
+            "num": 62,
+            "sameLevel": false
+        },
+        {
+            "source": "413734",
+            "target": "1000126595",
+            "label": "Kläus Müllen 使用指纹 'Adsorption' 4次",
+            "num": 4,
+            "sameLevel": false
+        },
+        {
+            "source": "303495",
+            "target": "1000306185",
+            "label": "江雷 使用指纹 'Carbon' 1次",
+            "num": 1,
+            "sameLevel": false
+        },
+        {
+            "source": "303495",
+            "target": "1000458678",
+            "label": "江雷 使用指纹 'jigs(templates)' 2次",
+            "num": 2,
+            "sameLevel": false
+        },
+        {
+            "source": "303495",
+            "target": "1000300677",
+            "label": "江雷 使用指纹 'mesoporous materials' 2次",
+            "num": 2,
+            "sameLevel": false
+        },
+        {
+            "source": "303495",
+            "target": "1000274611",
+            "label": "江雷 使用指纹 'synthesis' 4次",
+            "num": 4,
+            "sameLevel": false
+        },
+        {
+            "source": "303495",
+            "target": "1000247899",
+            "label": "江雷 使用指纹 'Self-assembly' 32次",
+            "num": 32,
+            "sameLevel": false
+        },
+        {
+            "source": "303495",
+            "target": "1000126595",
+            "label": "江雷 使用指纹 'Adsorption' 2次",
+            "num": 2,
+            "sameLevel": false
+        },
+        {
+            "source": "299049",
+            "target": "1000306185",
+            "label": "施剑林 使用指纹 'Carbon' 6次",
+            "num": 6,
+            "sameLevel": false
+        },
+        {
+            "source": "299049",
+            "target": "1000458678",
+            "label": "施剑林 使用指纹 'jigs(templates)' 1次",
+            "num": 1,
+            "sameLevel": false
+        },
+        {
+            "source": "299049",
+            "target": "1000300677",
+            "label": "施剑林 使用指纹 'mesoporous materials' 36次",
+            "num": 36,
+            "sameLevel": false
+        },
+        {
+            "source": "299049",
+            "target": "1000274611",
+            "label": "施剑林 使用指纹 'synthesis' 6次",
+            "num": 6,
+            "sameLevel": false
+        },
+        {
+            "source": "299049",
+            "target": "1000247899",
+            "label": "施剑林 使用指纹 'Self-assembly' 4次",
+            "num": 4,
+            "sameLevel": false
+        },
+        {
+            "source": "299049",
+            "target": "1000126595",
+            "label": "施剑林 使用指纹 'Adsorption' 3次",
+            "num": 3,
+            "sameLevel": false
+        },
+        {
+            "source": "132245",
+            "target": "1000300677",
+            "label": "万立骏 使用指纹 'mesoporous materials' 2次",
+            "num": 2,
+            "sameLevel": false
+        },
+        {
+            "source": "132245",
+            "target": "1000306185",
+            "label": "万立骏 使用指纹 'Carbon' 1次",
+            "num": 1,
+            "sameLevel": false
+        },
+        {
+            "source": "132245",
+            "target": "1000247899",
+            "label": "万立骏 使用指纹 'Self-assembly' 31次",
+            "num": 31,
+            "sameLevel": false
+        },
+        {
+            "source": "132245",
+            "target": "1000126595",
+            "label": "万立骏 使用指纹 'Adsorption' 2次",
+            "num": 2,
+            "sameLevel": false
+        },
+        {
+            "source": "3621",
+            "target": "1000300677",
+            "label": "山内悠輔 使用指纹 'mesoporous materials' 108次",
+            "num": 108,
+            "sameLevel": false
+        },
+        {
+            "source": "3621",
+            "target": "1000306185",
+            "label": "山内悠輔 使用指纹 'Carbon' 10次",
+            "num": 10,
+            "sameLevel": false
+        },
+        {
+            "source": "3621",
+            "target": "1000274611",
+            "label": "山内悠輔 使用指纹 'synthesis' 1次",
+            "num": 1,
+            "sameLevel": false
+        },
+        {
+            "source": "3621",
+            "target": "1000247899",
+            "label": "山内悠輔 使用指纹 'Self-assembly' 8次",
+            "num": 8,
+            "sameLevel": false
+        },
+        {
+            "source": "3621",
+            "target": "1000126595",
+            "label": "山内悠輔 使用指纹 'Adsorption' 3次",
+            "num": 3,
+            "sameLevel": false
+        },
+        {
+            "source": "2132629",
+            "target": "1000126595",
+            "label": "Mehrorang Ghaedi 使用指纹 'Adsorption' 63次",
+            "num": 63,
+            "sameLevel": false
+        },
+        {
+            "source": "2132629",
+            "target": "1000306185",
+            "label": "Mehrorang Ghaedi 使用指纹 'Carbon' 2次",
+            "num": 2,
+            "sameLevel": false
+        },
+        {
+            "source": "2139023",
+            "target": "1000126595",
+            "label": "韩润平 使用指纹 'Adsorption' 43次",
+            "num": 43,
+            "sameLevel": false
+        },
+        {
+            "source": "2043623",
+            "target": "1000126595",
+            "label": "张全兴 使用指纹 'Adsorption' 38次",
+            "num": 38,
+            "sameLevel": false
+        },
+        {
+            "source": "2043623",
+            "target": "1000274611",
+            "label": "张全兴 使用指纹 'synthesis' 1次",
+            "num": 1,
+            "sameLevel": false
+        },
+        {
+            "source": "2035906",
+            "target": "1000126595",
+            "label": "王如竹 使用指纹 'Adsorption' 47次",
+            "num": 47,
+            "sameLevel": false
+        },
+        {
+            "source": "1970956",
+            "target": "1000126595",
+            "label": "Gordon Mckay 使用指纹 'Adsorption' 43次",
+            "num": 43,
+            "sameLevel": false
+        },
+        {
+            "source": "1970956",
+            "target": "1000306185",
+            "label": "Gordon Mckay 使用指纹 'Carbon' 1次",
+            "num": 1,
+            "sameLevel": false
+        },
+        {
+            "source": "1962279",
+            "target": "1000126595",
+            "label": "高宝玉 使用指纹 'Adsorption' 62次",
+            "num": 62,
+            "sameLevel": false
+        },
+        {
+            "source": "731212",
+            "target": "1000126595",
+            "label": "曲久辉 使用指纹 'Adsorption' 50次",
+            "num": 50,
+            "sameLevel": false
+        },
+        {
+            "source": "383394",
+            "target": "1000126595",
+            "label": "Alírio egídio Rodrigues 使用指纹 'Adsorption' 54次",
+            "num": 54,
+            "sameLevel": false
+        },
+        {
+            "source": "383394",
+            "target": "1000274611",
+            "label": "Alírio egídio Rodrigues 使用指纹 'synthesis' 1次",
+            "num": 1,
+            "sameLevel": false
+        },
+        {
+            "source": "221209",
+            "target": "1000126595",
+            "label": "李爱民 使用指纹 'Adsorption' 87次",
+            "num": 87,
+            "sameLevel": false
+        },
+        {
+            "source": "221209",
+            "target": "1000274611",
+            "label": "李爱民 使用指纹 'synthesis' 1次",
+            "num": 1,
+            "sameLevel": false
+        },
+        {
+            "source": "1919917",
+            "target": "1000247899",
+            "label": "Samuel Stupp 使用指纹 'Self-assembly' 54次",
+            "num": 54,
+            "sameLevel": false
+        },
+        {
+            "source": "1000445667",
+            "target": "2031811",
+            "label": "朱海亮 使用指纹 'crystal structure' 95次",
+            "num": 95,
+            "sameLevel": false
+        },
+        {
+            "source": "1000395305",
+            "target": "221209",
+            "label": "李爱民 使用指纹 'Kinetics' 18次",
+            "num": 18,
+            "sameLevel": false
+        },
+        {
+            "source": "1000135838",
+            "target": "221209",
+            "label": "李爱民 使用指纹 'Ion Exchange' 15次",
+            "num": 15,
+            "sameLevel": false
+        },
+        {
+            "source": "1000158107",
+            "target": "2132629",
+            "label": "Mehrorang Ghaedi 使用指纹 'Solid Phase Extraction' 48次",
+            "num": 48,
+            "sameLevel": false
+        },
+        {
+            "source": "1000502030",
+            "target": "2132629",
+            "label": "Mehrorang Ghaedi 使用指纹 'Activated carbon' 47次",
+            "num": 47,
+            "sameLevel": false
+        },
+        {
+            "source": "1000395305",
+            "target": "1962279",
+            "label": "高宝玉 使用指纹 'Kinetics' 27次",
+            "num": 27,
+            "sameLevel": false
+        },
+        {
+            "source": "1000244084",
+            "target": "1962279",
+            "label": "高宝玉 使用指纹 'Coagulation' 25次",
+            "num": 25,
+            "sameLevel": false
+        },
+        {
+            "source": "1000502030",
+            "target": "1962279",
+            "label": "高宝玉 使用指纹 'Activated carbon' 18次",
+            "num": 18,
+            "sameLevel": false
+        },
+        {
+            "source": "1000142889",
+            "target": "2035906",
+            "label": "王如竹 使用指纹 'Solar Energy' 58次",
+            "num": 58,
+            "sameLevel": false
+        },
+        {
+            "source": "1000436994",
+            "target": "2035906",
+            "label": "王如竹 使用指纹 'Experiments' 31次",
+            "num": 31,
+            "sameLevel": false
+        },
+        {
+            "source": "1000493085",
+            "target": "2035906",
+            "label": "王如竹 使用指纹 'refrigeration' 27次",
+            "num": 27,
+            "sameLevel": false
+        },
+        {
+            "source": "1000137705",
+            "target": "383394",
+            "label": "Alírio egídio Rodrigues 使用指纹 'Mathematical Model' 17次",
+            "num": 17,
+            "sameLevel": false
+        },
+        {
+            "source": "1000131662",
+            "target": "383394",
+            "label": "Alírio egídio Rodrigues 使用指纹 'Separation' 16次",
+            "num": 16,
+            "sameLevel": false
+        },
+        {
+            "source": "1000156005",
+            "target": "1919917",
+            "label": "Samuel Stupp 使用指纹 'Regenerative Medicine' 15次",
+            "num": 15,
+            "sameLevel": false
+        },
+        {
+            "source": "1000128240",
+            "target": "1919917",
+            "label": "Samuel Stupp 使用指纹 'Biocompatible Materials' 13次",
+            "num": 13,
+            "sameLevel": false
+        },
+        {
+            "source": "1000139660",
+            "target": "1919917",
+            "label": "Samuel Stupp 使用指纹 'Peptides' 8次",
+            "num": 8,
+            "sameLevel": false
+        },
+        {
+            "source": "1000244084",
+            "target": "731212",
+            "label": "曲久辉 使用指纹 'Coagulation' 25次",
+            "num": 25,
+            "sameLevel": false
+        },
+        {
+            "source": "1000496662",
+            "target": "731212",
+            "label": "曲久辉 使用指纹 'Arsenic' 22次",
+            "num": 22,
+            "sameLevel": false
+        },
+        {
+            "source": "1000450465",
+            "target": "731212",
+            "label": "曲久辉 使用指纹 'water treatment' 17次",
+            "num": 17,
+            "sameLevel": false
+        },
+        {
+            "source": "1000277580",
+            "target": "806106",
+            "label": "李正名 使用指纹 'insecticidal activity' 48次",
+            "num": 48,
+            "sameLevel": false
+        },
+        {
+            "source": "1000274104",
+            "target": "806106",
+            "label": "李正名 使用指纹 'herbicidal activity' 35次",
+            "num": 35,
+            "sameLevel": false
+        },
+        {
+            "source": "1000303074",
+            "target": "806106",
+            "label": "李正名 使用指纹 'Biological activity' 28次",
+            "num": 28,
+            "sameLevel": false
+        },
+        {
+            "source": "1000137428",
+            "target": "2139023",
+            "label": "韩润平 使用指纹 'Methylene Blue' 20次",
+            "num": 20,
+            "sameLevel": false
+        },
+        {
+            "source": "1000417501",
+            "target": "2139023",
+            "label": "韩润平 使用指纹 'Regeneration' 11次",
+            "num": 11,
+            "sameLevel": false
+        },
+        {
+            "source": "1000502046",
+            "target": "2139023",
+            "label": "韩润平 使用指纹 'Adsorption towers' 9次",
+            "num": 9,
+            "sameLevel": false
+        },
+        {
+            "source": "1000502030",
+            "target": "1970956",
+            "label": "Gordon Mckay 使用指纹 'Activated carbon' 21次",
+            "num": 21,
+            "sameLevel": false
+        },
+        {
+            "source": "1000435569",
+            "target": "1970956",
+            "label": "Gordon Mckay 使用指纹 'Acid dyes' 13次",
+            "num": 13,
+            "sameLevel": false
+        },
+        {
+            "source": "1000464310",
+            "target": "2043623",
+            "label": "张全兴 使用指纹 'POLYMERIC ADSORBENT' 12次",
+            "num": 12,
+            "sameLevel": false
+        },
+        {
+            "source": "1000395305",
+            "target": "2043623",
+            "label": "张全兴 使用指纹 'Kinetics' 10次",
+            "num": 10,
+            "sameLevel": false
+        },
+        {
+            "source": "1000279495",
+            "target": "1980612",
+            "label": "屠树江 使用指纹 'microwave irradiation' 33次",
+            "num": 33,
+            "sameLevel": false
+        },
+        {
+            "source": "1000300730",
+            "target": "1980612",
+            "label": "屠树江 使用指纹 'microwave applicators' 13次",
+            "num": 13,
+            "sameLevel": false
+        },
+        {
+            "source": "1000539142",
+            "target": "1980612",
+            "label": "屠树江 使用指纹 'aqueous media' 12次",
+            "num": 12,
+            "sameLevel": false
+        },
+        {
+            "source": "2043623",
+            "target": "221209",
+            "label": "张全兴 与 李爱民 合作49次",
+            "num": 49,
+            "sameLevel": true
+        },
+        {
+            "source": "303495",
+            "target": "2019270",
+            "label": "江雷 与 赵东元 合作1次",
+            "num": 1,
+            "sameLevel": true
+        },
+        {
+            "source": "132245",
+            "target": "303495",
+            "label": "万立骏 与 江雷 合作1次",
+            "num": 1,
+            "sameLevel": true
+        }
+    	];
+		
+		
+		
+    	
+    	//新建一个力导向图
+    	var forceSimulation = d3.forceSimulation()
+    		.force("link",d3.forceLink().id(function (d){return d.id}))
+    		.force("charge",d3.forceManyBody())
+    		.force("center",d3.forceCenter())
+			 .force('collide', d3.forceCollide(function (d){
+            if (d.category==0) {
+              d.fx = width / 2 // 设置特定节点固定x坐标
+              d.fy = height / 2
+            }
+            // return 130 - d.level * 20
+            return 50
+          }));
+    		
+    	//初始化力导向图，也就是传入数据
+    	//生成节点数据
+    	forceSimulation.nodes(nodes)
+    		.on("tick",ticked);//这个函数很重要，后面给出具体实现和说明
+    	//生成边数据
+    	forceSimulation.force("link")
+    		.links(edges)
+    		.distance(function(d){//每一边的长度
+    			return 60; 
+    		})    	
+    	//设置图形的中心位置	
+    	forceSimulation.force("center")
+    		.x(width/2)
+    		.y(height/2);
+    	//在浏览器的控制台输出
+		 
+		
+    	//有了节点和边的数据后，我们开始绘制
+    	//绘制边
+    	var links = g.append("g")
+    		.selectAll("line")
+    		.data(edges)
+    		.enter()
+    		.append("line")
+    		.attr("stroke",function(d,i){
+    			return 'black';
+    		})
+    		.attr("stroke-width",'.2px');
+    	var linksText = g.append("g")
+    		.selectAll("text")
+    		.data(edges)
+    		.enter()
+    		.append("text")
+			.attr('text-anchor', "middle")
+			.attr("font-size","12px")
+    		.text(function(d){
+    			return "";
+    		})
+    	
+    	//绘制节点
+    	//老规矩，先为节点和节点上的文字分组
+    	var gs = g.selectAll(".circleText")
+    		.data(nodes)
+    		.enter()
+    		.append("g")
+    		.attr("transform",function(d,i){
+    			var cirX = d.x;
+    			var cirY = d.y;
+    			return "translate("+cirX+","+cirY+")";
+    		})
+			.attr("cursor","pointer")
+    		.call(d3.drag()
+    			.on("start",started)
+    			.on("drag",dragged)
+    			.on("end",ended)
+    		)
+			.on('click', function (d){
+				handleClick(d);
+			 });
+    		
+    	//绘制节点
+    	gs.append("circle")
+    		.attr("r",function (d){
+				if(d.category ==0){return 50}
+				else if(d.category ==1){return 40}
+				else if(d.category ==2){return 30}
+				else if(d.category ==3){return 25}
+			})
+    		 .attr("fill", function(d,i){
+					if(d.category ==0){return "#967adc"}
+				else if(d.category ==1){return "#37bc9b"}
+				else if(d.category ==2){return "#3bafda"}
+				else if(d.category ==3){return "#ff7e90"}
+	                  })
+					  
+		  gs.append('image')
+          .attr('href',function(d){
+		  if(d.category==0 || d.category ==2){
+		  return "ico-expert.png";
+		  }else return "ico-keyword.png";
+		  })
+          .attr('width', 25)
+          .attr('height', 25)
+          .attr('x', -12)
+          .attr('y', -14)
+	                        	
+	                    
+    	//文字
+    	gs.append("text")
+    		.attr("x",0)
+    		.attr("y",-10)
+    		.attr("dy","1em")
+			.selectAll('tspan')
+			.data(function (d){
+					return d.label.split(' ').reverse();
+			})
+			.join('tspan')
+			.attr('x', 0)
+			.attr('y', function (d,i,nodes){
+				
+				return 25*i + 5;
+			})
+			.attr('font-size','10px')
+			 .attr('fill', 'white')
+			.attr("text-anchor", "middle")
+    		.text(function(data){
+    			return data;
+    		})
+    	
+    	function ticked(){
+    		links
+    			.attr("x1",function(d){return d.source.x;})
+    			.attr("y1",function(d){return d.source.y;})
+    			.attr("x2",function(d){return d.target.x;})
+    			.attr("y2",function(d){return d.target.y;});
+    			
+    		linksText
+    			.attr("x",function(d){
+    			return (d.source.x+d.target.x)/2;
+    		})
+    		.attr("y",function(d){
+    			return (d.source.y+d.target.y)/2;
+    		});
+    			
+    		gs
+    			.attr("transform",function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+    	}
+    	function started(d){
+    		if(!d3.event.active){
+    			forceSimulation.alphaTarget(0.8).restart();
+    		}
+    		d.fx = d.x;
+    		d.fy = d.y;
+    	}
+    	function dragged(d){
+    		d.fx = d3.event.x;
+    		d.fy = d3.event.y;
+    	}
+    	function ended(d){
+    		if(!d3.event.active){
+    			forceSimulation.alphaTarget(0);
+    		}
+    		d.fx = null;
+    		d.fy = null;
+    	}
+		
+		function handleClick(d){
+alert(1)
+		}
+    </script>
+  </body>
+</html>
