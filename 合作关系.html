@@ -1,0 +1,3223 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test</title>
+</head>
+<body>
+    <div id="main" style=" height:800px"></div>
+    <div id="ss" ></div>
+    <script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
+	
+    <script type="text/javascript">
+
+        require.config({
+            paths : {
+                echarts : 'http://echarts.baidu.com/build/dist'
+            }
+        });
+        require([ "echarts", "echarts/chart/force"], function(ec) {
+            var myChart = ec.init(document.getElementById('main'))
+            var option = {
+                tooltip : {
+					trigger: 'item',
+					formatter:function(params){
+					
+                    if(params.data.category!= undefined){
+						return params.data.label;
+					}else{
+						return params.data.flow;
+					}
+					
+                }
+                },
+				legend: {
+							x: 'left',
+							data:['本人','合作者','合作者的合作者',]
+						},
+                series : [ {
+                    type : 'force',
+                 
+                    itemStyle : {
+                        normal : {
+                            label : {show : true},
+                            nodeStyle : {
+                                brushType : 'both',
+                                borderColor : 'rgba(255,215,0,0.4)',
+                                borderWidth : 1
+								
+                            }
+                        }
+                    },
+					
+                    categories : [ {name : '本人'}, {name : '合作者'}, {name : '合作者的合作者'} ],
+					useWorker: true, //是否在浏览器支持 web worker 的时候把布局计算放入 web worker 中
+					focusNodeAdjacency: true,  //突出相关
+					gravity: 1,  //向心力系数，系数越大则节点越往中心靠拢
+					scaling:6,	 //布局缩放系数，并不完全精确, 效果跟布局大小类似，越小越紧密
+					roam: true, //	是否开启滚轮缩放和拖拽漫游，默认为false（关闭），其他有效输入为true（开启），'scale'（仅开启滚轮缩放），'move'（仅开启拖拽漫游）
+					large: false,
+					linkSymbol: 'arrow',
+					
+                     nodes :[
+    {
+      "id": 2019270,
+      "category": 0,
+      "name": "2019270",
+      "label": "赵东元",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2044262,
+      "category": 1,
+      "name": "2044262",
+      "label": "Banglin Chen",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2046376,
+      "category": 1,
+      "name": "2046376",
+      "label": "刘华坤",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2035256,
+      "category": 1,
+      "name": "2035256",
+      "label": "Chengzhong Yu",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2034283,
+      "category": 1,
+      "name": "2034283",
+      "label": "武利民",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2030939,
+      "category": 1,
+      "name": "2030939",
+      "label": "严玉山",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2023049,
+      "category": 1,
+      "name": "2023049",
+      "label": "杨芃原",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2023041,
+      "category": 1,
+      "name": "2023041",
+      "label": "杨培东",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2018953,
+      "category": 1,
+      "name": "2018953",
+      "label": "逯高清",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2012470,
+      "category": 1,
+      "name": "2012470",
+      "label": "夏永姚",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2006498,
+      "category": 1,
+      "name": "2006498",
+      "label": "朱广山",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2001191,
+      "category": 1,
+      "name": "2001191",
+      "label": "贺鹤勇",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1983026,
+      "category": 1,
+      "name": "1983026",
+      "label": "Shilun Qiu",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1942263,
+      "category": 1,
+      "name": "1942263",
+      "label": "Galen Stucky",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1898497,
+      "category": 1,
+      "name": "1898497",
+      "label": "Serge Kaliaguine",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1894957,
+      "category": 1,
+      "name": "1894957",
+      "label": "Ferdi Schüth",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1894721,
+      "category": 1,
+      "name": "1894721",
+      "label": "屠波",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1854192,
+      "category": 1,
+      "name": "1854192",
+      "label": "Bradley Chmelka",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1777195,
+      "category": 1,
+      "name": "1777195",
+      "label": "Abdullah Asiri",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 769249,
+      "category": 1,
+      "name": "769249",
+      "label": "Wuzong Zhou",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 416508,
+      "category": 1,
+      "name": "416508",
+      "label": "Lijuan Zhang",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 413404,
+      "category": 1,
+      "name": "413404",
+      "label": "Changsik Ha",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 300334,
+      "category": 1,
+      "name": "300334",
+      "label": "乔世璋",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 297039,
+      "category": 1,
+      "name": "297039",
+      "label": "高峰",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 102501,
+      "category": 1,
+      "name": "102501",
+      "label": "Yan Yan",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 61962,
+      "category": 1,
+      "name": "61962",
+      "label": "Osamu Terasaki",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2043729,
+      "category": 2,
+      "name": "2043729",
+      "label": "Jiaxing Huang",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1956486,
+      "category": 2,
+      "name": "1956486",
+      "label": "Arun Majumdar",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 365542,
+      "category": 2,
+      "name": "365542",
+      "label": "Gábor Somorjai",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 337608,
+      "category": 2,
+      "name": "337608",
+      "label": "Christopher Chang",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2023305,
+      "category": 2,
+      "name": "2023305",
+      "label": "孙聆东",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1924415,
+      "category": 2,
+      "name": "1924415",
+      "label": "Craig Hawker",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1916979,
+      "category": 2,
+      "name": "1916979",
+      "label": "Ram Seshadri",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1860874,
+      "category": 2,
+      "name": "1860874",
+      "label": "Martin Moskovits",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 778161,
+      "category": 2,
+      "name": "778161",
+      "label": "胡勇胜",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 443343,
+      "category": 2,
+      "name": "443343",
+      "label": " Wudl F.",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 413233,
+      "category": 2,
+      "name": "413233",
+      "label": "Wei Tang",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 367312,
+      "category": 2,
+      "name": "367312",
+      "label": "Herbert Waite",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 278860,
+      "category": 2,
+      "name": "278860",
+      "label": "陈立泉",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 28647,
+      "category": 2,
+      "name": "28647",
+      "label": "王建方",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1989332,
+      "category": 2,
+      "name": "1989332",
+      "label": "Jin Zou",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 38990,
+      "category": 2,
+      "name": "38990",
+      "label": "Jun Zhang",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2042520,
+      "category": 2,
+      "name": "2042520",
+      "label": "汪国秀",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2113301,
+      "category": 2,
+      "name": "2113301",
+      "label": "余家国",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1985835,
+      "category": 2,
+      "name": "1985835",
+      "label": "戴胜",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1944384,
+      "category": 2,
+      "name": "1944384",
+      "label": "邢巍",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 370740,
+      "category": 2,
+      "name": "370740",
+      "label": "Mietek Jaroniec",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 50593,
+      "category": 2,
+      "name": "50593",
+      "label": "楼雄文",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2027313,
+      "category": 2,
+      "name": "2027313",
+      "label": "成会明",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1256538,
+      "category": 2,
+      "name": "1256538",
+      "label": "余艾冰",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1199484,
+      "category": 2,
+      "name": "1199484",
+      "label": "Feng Li",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 664491,
+      "category": 2,
+      "name": "664491",
+      "label": "Lì Lì",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 418057,
+      "category": 2,
+      "name": "418057",
+      "label": "Gang Liu",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 418017,
+      "category": 2,
+      "name": "418017",
+      "label": "Gang Liu",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 279501,
+      "category": 2,
+      "name": "279501",
+      "label": "Feng Li",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 119217,
+      "category": 2,
+      "name": "119217",
+      "label": "Yu Murzin",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2053286,
+      "category": 2,
+      "name": "2053286",
+      "label": "Jianjun Wang",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2068924,
+      "category": 2,
+      "name": "2068924",
+      "label": "Qing Li",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2041814,
+      "category": 2,
+      "name": "2041814",
+      "label": "Jing Xu",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2014407,
+      "category": 2,
+      "name": "2014407",
+      "label": "高福",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1992095,
+      "category": 2,
+      "name": "1992095",
+      "label": "周峰",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1955415,
+      "category": 2,
+      "name": "1955415",
+      "label": "计亮年",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1923499,
+      "category": 2,
+      "name": "1923499",
+      "label": "Ronald Busuttil",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1917770,
+      "category": 2,
+      "name": "1917770",
+      "label": "Jerzy Kupiec-Wegliński",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 378756,
+      "category": 2,
+      "name": "378756",
+      "label": "Wei Zhao",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 374566,
+      "category": 2,
+      "name": "374566",
+      "label": "Hui Yang",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 365617,
+      "category": 2,
+      "name": "365617",
+      "label": "David wayne Goodman",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 418137,
+      "category": 2,
+      "name": "418137",
+      "label": "王婧",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2009153,
+      "category": 2,
+      "name": "2009153",
+      "label": "徐如人",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2059359,
+      "category": 2,
+      "name": "2059359",
+      "label": "于吉红",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1961462,
+      "category": 2,
+      "name": "1961462",
+      "label": "肖丰收",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 416380,
+      "category": 2,
+      "name": "416380",
+      "label": "Nan Li",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2008659,
+      "category": 2,
+      "name": "2008659",
+      "label": "Kazuyuki Kuroda",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1968917,
+      "category": 2,
+      "name": "1968917",
+      "label": "Takashi Tatsumi",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1874059,
+      "category": 2,
+      "name": "1874059",
+      "label": "Ryoo Ryong",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1646797,
+      "category": 2,
+      "name": "1646797",
+      "label": "María Vallet-Regí",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 3621,
+      "category": 2,
+      "name": "3621",
+      "label": "山内悠輔",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1947091,
+      "category": 2,
+      "name": "1947091",
+      "label": "费英伟",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1918459,
+      "category": 2,
+      "name": "1918459",
+      "label": "Thomas jay Webster",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 844401,
+      "category": 2,
+      "name": "844401",
+      "label": "万梅香",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 278096,
+      "category": 2,
+      "name": "278096",
+      "label": "Hong Lü",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1972684,
+      "category": 2,
+      "name": "1972684",
+      "label": "邓春晖",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1931700,
+      "category": 2,
+      "name": "1931700",
+      "label": "Hubert Girault",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2039641,
+      "category": 2,
+      "name": "2039641",
+      "label": "Min Chen",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1987381,
+      "category": 2,
+      "name": "1987381",
+      "label": "方晓生",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2042959,
+      "category": 2,
+      "name": "2042959",
+      "label": "Hui Xu",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1882114,
+      "category": 2,
+      "name": "1882114",
+      "label": "Taner Yildirim",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1873540,
+      "category": 2,
+      "name": "1873540",
+      "label": "Emil Lobkovsky",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1116606,
+      "category": 2,
+      "name": "1116606",
+      "label": "Michael O'Keeffe",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 643557,
+      "category": 2,
+      "name": "643557",
+      "label": "Rajamani Krishna",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 413816,
+      "category": 2,
+      "name": "413816",
+      "label": "Wei Zhou",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 383394,
+      "category": 2,
+      "name": "383394",
+      "label": "Alírio egídio Rodrigues",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 78972,
+      "category": 2,
+      "name": "78972",
+      "label": "Hui Wu",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2124765,
+      "category": 2,
+      "name": "2124765",
+      "label": "Yonggang Wang",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 417897,
+      "category": 2,
+      "name": "417897",
+      "label": "Ping He",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2025100,
+      "category": 2,
+      "name": "2025100",
+      "label": "Xinghuo Yu",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1936341,
+      "category": 2,
+      "name": "1936341",
+      "label": "Frank Caruso",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 413446,
+      "category": 2,
+      "name": "413446",
+      "label": "钱逸泰",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 366181,
+      "category": 2,
+      "name": "366181",
+      "label": "Li Yang",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1916095,
+      "category": 2,
+      "name": "1916095",
+      "label": "John Irvine",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 769454,
+      "category": 2,
+      "name": "769454",
+      "label": "Rushi Liu",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1985266,
+      "category": 2,
+      "name": "1985266",
+      "label": "范康年",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1929377,
+      "category": 2,
+      "name": "1929377",
+      "label": "曾适之",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 846733,
+      "category": 2,
+      "name": "846733",
+      "label": "刘前",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 418378,
+      "category": 2,
+      "name": "418378",
+      "label": "Lin He",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2095668,
+      "category": 2,
+      "name": "2095668",
+      "label": "Zhaoxiang Wang",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2126134,
+      "category": 2,
+      "name": "2126134",
+      "label": "Jiazhao Wang",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2031697,
+      "category": 2,
+      "name": "2031697",
+      "label": "Zaiping Guo",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1976069,
+      "category": 2,
+      "name": "1976069",
+      "label": "Gordon Wallace",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1051052,
+      "category": 2,
+      "name": "1051052",
+      "label": "窦士学",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 355708,
+      "category": 2,
+      "name": "355708",
+      "label": "吴宇平",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2033973,
+      "category": 2,
+      "name": "2033973",
+      "label": "Mark Davis",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 347904,
+      "category": 2,
+      "name": "347904",
+      "label": "陈忠伟",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2126346,
+      "category": 2,
+      "name": "2126346",
+      "label": "陈小元",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1857475,
+      "category": 2,
+      "name": "1857475",
+      "label": "Michael Guiver",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2042881,
+      "category": 2,
+      "name": "2042881",
+      "label": "林岳和",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1972222,
+      "category": 2,
+      "name": "1972222",
+      "label": "Hermenegildo García",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1966719,
+      "category": 2,
+      "name": "1966719",
+      "label": "Alan roy Katritzky",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1879774,
+      "category": 2,
+      "name": "1879774",
+      "label": "Bert Weckhuysen",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1888003,
+      "category": 2,
+      "name": "1888003",
+      "label": "Gustavo Scuseria",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 884461,
+      "category": 2,
+      "name": "884461",
+      "label": "Edward Tiekink",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 141473,
+      "category": 2,
+      "name": "141473",
+      "label": "Xuping Sun",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    }
+  ],
+							
+                    links :  [
+    {
+      "source": "2044262",
+      "target": "2019270",
+      "label": null,
+      "num": 6
+    },
+    {
+      "source": "2046376",
+      "target": "2019270",
+      "label": null,
+      "num": 5
+    },
+    {
+      "source": "2035256",
+      "target": "2019270",
+      "label": null,
+      "num": 66
+    },
+    {
+      "source": "2034283",
+      "target": "2019270",
+      "label": null,
+      "num": 5
+    },
+    {
+      "source": "2030939",
+      "target": "2019270",
+      "label": null,
+      "num": 6
+    },
+    {
+      "source": "2023049",
+      "target": "2019270",
+      "label": null,
+      "num": 11
+    },
+    {
+      "source": "2023041",
+      "target": "2019270",
+      "label": null,
+      "num": 8
+    },
+    {
+      "source": "2018953",
+      "target": "2019270",
+      "label": null,
+      "num": 9
+    },
+    {
+      "source": "2012470",
+      "target": "2019270",
+      "label": null,
+      "num": 20
+    },
+    {
+      "source": "2006498",
+      "target": "2019270",
+      "label": null,
+      "num": 7
+    },
+    {
+      "source": "2001191",
+      "target": "2019270",
+      "label": null,
+      "num": 7
+    },
+    {
+      "source": "1983026",
+      "target": "2019270",
+      "label": null,
+      "num": 11
+    },
+    {
+      "source": "1942263",
+      "target": "2019270",
+      "label": null,
+      "num": 38
+    },
+    {
+      "source": "1898497",
+      "target": "2019270",
+      "label": null,
+      "num": 8
+    },
+    {
+      "source": "1894957",
+      "target": "2019270",
+      "label": null,
+      "num": 5
+    },
+    {
+      "source": "1894721",
+      "target": "2019270",
+      "label": null,
+      "num": 132
+    },
+    {
+      "source": "1854192",
+      "target": "2019270",
+      "label": null,
+      "num": 15
+    },
+    {
+      "source": "1777195",
+      "target": "2019270",
+      "label": null,
+      "num": 9
+    },
+    {
+      "source": "769249",
+      "target": "2019270",
+      "label": null,
+      "num": 5
+    },
+    {
+      "source": "416508",
+      "target": "2019270",
+      "label": null,
+      "num": 7
+    },
+    {
+      "source": "413404",
+      "target": "2019270",
+      "label": null,
+      "num": 8
+    },
+    {
+      "source": "300334",
+      "target": "2019270",
+      "label": null,
+      "num": 5
+    },
+    {
+      "source": "297039",
+      "target": "2019270",
+      "label": null,
+      "num": 18
+    },
+    {
+      "source": "102501",
+      "target": "2019270",
+      "label": null,
+      "num": 7
+    },
+    {
+      "source": "61962",
+      "target": "2019270",
+      "label": null,
+      "num": 9
+    },
+    {
+      "source": "2023041",
+      "target": "1854192",
+      "label": null,
+      "num": 7
+    },
+    {
+      "source": "1942263",
+      "target": "1854192",
+      "label": null,
+      "num": 14
+    },
+    {
+      "source": "2043729",
+      "target": "2023041",
+      "label": null,
+      "num": 6
+    },
+    {
+      "source": "1956486",
+      "target": "2023041",
+      "label": null,
+      "num": 6
+    },
+    {
+      "source": "1942263",
+      "target": "2023041",
+      "label": null,
+      "num": 8
+    },
+    {
+      "source": "365542",
+      "target": "2023041",
+      "label": null,
+      "num": 25
+    },
+    {
+      "source": "337608",
+      "target": "2023041",
+      "label": null,
+      "num": 6
+    },
+    {
+      "source": "2023305",
+      "target": "1942263",
+      "label": null,
+      "num": 5
+    },
+    {
+      "source": "2035256",
+      "target": "1942263",
+      "label": null,
+      "num": 7
+    },
+    {
+      "source": "1924415",
+      "target": "1942263",
+      "label": null,
+      "num": 8
+    },
+    {
+      "source": "1916979",
+      "target": "1942263",
+      "label": null,
+      "num": 14
+    },
+    {
+      "source": "1860874",
+      "target": "1942263",
+      "label": null,
+      "num": 24
+    },
+    {
+      "source": "778161",
+      "target": "1942263",
+      "label": null,
+      "num": 10
+    },
+    {
+      "source": "443343",
+      "target": "1942263",
+      "label": null,
+      "num": 8
+    },
+    {
+      "source": "413233",
+      "target": "1942263",
+      "label": null,
+      "num": 6
+    },
+    {
+      "source": "367312",
+      "target": "1942263",
+      "label": null,
+      "num": 9
+    },
+    {
+      "source": "278860",
+      "target": "1942263",
+      "label": null,
+      "num": 5
+    },
+    {
+      "source": "28647",
+      "target": "1942263",
+      "label": null,
+      "num": 13
+    },
+    {
+      "source": "2023049",
+      "target": "2035256",
+      "label": null,
+      "num": 5
+    },
+    {
+      "source": "2018953",
+      "target": "2035256",
+      "label": null,
+      "num": 19
+    },
+    {
+      "source": "1989332",
+      "target": "2035256",
+      "label": null,
+      "num": 17
+    },
+    {
+      "source": "1894721",
+      "target": "2035256",
+      "label": null,
+      "num": 34
+    },
+    {
+      "source": "300334",
+      "target": "2035256",
+      "label": null,
+      "num": 11
+    },
+    {
+      "source": "38990",
+      "target": "2035256",
+      "label": null,
+      "num": 7
+    },
+    {
+      "source": "2042520",
+      "target": "300334",
+      "label": null,
+      "num": 8
+    },
+    {
+      "source": "2113301",
+      "target": "300334",
+      "label": null,
+      "num": 5
+    },
+    {
+      "source": "2018953",
+      "target": "300334",
+      "label": null,
+      "num": 56
+    },
+    {
+      "source": "1985835",
+      "target": "300334",
+      "label": null,
+      "num": 14
+    },
+    {
+      "source": "1944384",
+      "target": "300334",
+      "label": null,
+      "num": 12
+    },
+    {
+      "source": "370740",
+      "target": "300334",
+      "label": null,
+      "num": 40
+    },
+    {
+      "source": "50593",
+      "target": "300334",
+      "label": null,
+      "num": 6
+    },
+    {
+      "source": "2027313",
+      "target": "2018953",
+      "label": null,
+      "num": 92
+    },
+    {
+      "source": "1989332",
+      "target": "2018953",
+      "label": null,
+      "num": 37
+    },
+    {
+      "source": "1944384",
+      "target": "2018953",
+      "label": null,
+      "num": 5
+    },
+    {
+      "source": "1256538",
+      "target": "2018953",
+      "label": null,
+      "num": 8
+    },
+    {
+      "source": "1199484",
+      "target": "2018953",
+      "label": null,
+      "num": 10
+    },
+    {
+      "source": "664491",
+      "target": "2018953",
+      "label": null,
+      "num": 11
+    },
+    {
+      "source": "418057",
+      "target": "2018953",
+      "label": null,
+      "num": 43
+    },
+    {
+      "source": "418017",
+      "target": "2018953",
+      "label": null,
+      "num": 10
+    },
+    {
+      "source": "279501",
+      "target": "2018953",
+      "label": null,
+      "num": 30
+    },
+    {
+      "source": "119217",
+      "target": "2018953",
+      "label": null,
+      "num": 5
+    },
+    {
+      "source": "2053286",
+      "target": "297039",
+      "label": null,
+      "num": 11
+    },
+    {
+      "source": "2068924",
+      "target": "297039",
+      "label": null,
+      "num": 5
+    },
+    {
+      "source": "2041814",
+      "target": "297039",
+      "label": null,
+      "num": 5
+    },
+    {
+      "source": "2014407",
+      "target": "297039",
+      "label": null,
+      "num": 13
+    },
+    {
+      "source": "1992095",
+      "target": "297039",
+      "label": null,
+      "num": 5
+    },
+    {
+      "source": "1955415",
+      "target": "297039",
+      "label": null,
+      "num": 6
+    },
+    {
+      "source": "1923499",
+      "target": "297039",
+      "label": null,
+      "num": 17
+    },
+    {
+      "source": "1917770",
+      "target": "297039",
+      "label": null,
+      "num": 17
+    },
+    {
+      "source": "1894721",
+      "target": "297039",
+      "label": null,
+      "num": 6
+    },
+    {
+      "source": "378756",
+      "target": "297039",
+      "label": null,
+      "num": 6
+    },
+    {
+      "source": "374566",
+      "target": "297039",
+      "label": null,
+      "num": 5
+    },
+    {
+      "source": "365617",
+      "target": "297039",
+      "label": null,
+      "num": 12
+    },
+    {
+      "source": "416508",
+      "target": "1894721",
+      "label": null,
+      "num": 6
+    },
+    {
+      "source": "102501",
+      "target": "1894721",
+      "label": null,
+      "num": 7
+    },
+    {
+      "source": "418137",
+      "target": "413404",
+      "label": null,
+      "num": 7
+    },
+    {
+      "source": "2009153",
+      "target": "2006498",
+      "label": null,
+      "num": 5
+    },
+    {
+      "source": "1983026",
+      "target": "2006498",
+      "label": null,
+      "num": 106
+    },
+    {
+      "source": "61962",
+      "target": "2006498",
+      "label": null,
+      "num": 8
+    },
+    {
+      "source": "2044262",
+      "target": "1983026",
+      "label": null,
+      "num": 6
+    },
+    {
+      "source": "2059359",
+      "target": "1983026",
+      "label": null,
+      "num": 11
+    },
+    {
+      "source": "2009153",
+      "target": "1983026",
+      "label": null,
+      "num": 7
+    },
+    {
+      "source": "1961462",
+      "target": "1983026",
+      "label": null,
+      "num": 10
+    },
+    {
+      "source": "416380",
+      "target": "1983026",
+      "label": null,
+      "num": 6
+    },
+    {
+      "source": "61962",
+      "target": "1983026",
+      "label": null,
+      "num": 20
+    },
+    {
+      "source": "2059359",
+      "target": "61962",
+      "label": null,
+      "num": 18
+    },
+    {
+      "source": "2009153",
+      "target": "61962",
+      "label": null,
+      "num": 7
+    },
+    {
+      "source": "2008659",
+      "target": "61962",
+      "label": null,
+      "num": 10
+    },
+    {
+      "source": "1968917",
+      "target": "61962",
+      "label": null,
+      "num": 20
+    },
+    {
+      "source": "1961462",
+      "target": "61962",
+      "label": null,
+      "num": 7
+    },
+    {
+      "source": "1894957",
+      "target": "61962",
+      "label": null,
+      "num": 8
+    },
+    {
+      "source": "1874059",
+      "target": "61962",
+      "label": null,
+      "num": 28
+    },
+    {
+      "source": "1646797",
+      "target": "61962",
+      "label": null,
+      "num": 7
+    },
+    {
+      "source": "370740",
+      "target": "61962",
+      "label": null,
+      "num": 8
+    },
+    {
+      "source": "3621",
+      "target": "61962",
+      "label": null,
+      "num": 8
+    },
+    {
+      "source": "2023049",
+      "target": "416508",
+      "label": null,
+      "num": 7
+    },
+    {
+      "source": "1947091",
+      "target": "416508",
+      "label": null,
+      "num": 5
+    },
+    {
+      "source": "1918459",
+      "target": "416508",
+      "label": null,
+      "num": 6
+    },
+    {
+      "source": "844401",
+      "target": "416508",
+      "label": null,
+      "num": 5
+    },
+    {
+      "source": "278096",
+      "target": "416508",
+      "label": null,
+      "num": 6
+    },
+    {
+      "source": "1972684",
+      "target": "2023049",
+      "label": null,
+      "num": 40
+    },
+    {
+      "source": "1931700",
+      "target": "2023049",
+      "label": null,
+      "num": 7
+    },
+    {
+      "source": "2039641",
+      "target": "2034283",
+      "label": null,
+      "num": 61
+    },
+    {
+      "source": "1987381",
+      "target": "2034283",
+      "label": null,
+      "num": 16
+    },
+    {
+      "source": "2042959",
+      "target": "2044262",
+      "label": null,
+      "num": 10
+    },
+    {
+      "source": "1882114",
+      "target": "2044262",
+      "label": null,
+      "num": 10
+    },
+    {
+      "source": "1873540",
+      "target": "2044262",
+      "label": null,
+      "num": 9
+    },
+    {
+      "source": "1116606",
+      "target": "2044262",
+      "label": null,
+      "num": 12
+    },
+    {
+      "source": "643557",
+      "target": "2044262",
+      "label": null,
+      "num": 19
+    },
+    {
+      "source": "413816",
+      "target": "2044262",
+      "label": null,
+      "num": 7
+    },
+    {
+      "source": "383394",
+      "target": "2044262",
+      "label": null,
+      "num": 5
+    },
+    {
+      "source": "78972",
+      "target": "2044262",
+      "label": null,
+      "num": 5
+    },
+    {
+      "source": "2124765",
+      "target": "2012470",
+      "label": null,
+      "num": 8
+    },
+    {
+      "source": "1199484",
+      "target": "2012470",
+      "label": null,
+      "num": 6
+    },
+    {
+      "source": "417897",
+      "target": "2012470",
+      "label": null,
+      "num": 11
+    },
+    {
+      "source": "2025100",
+      "target": "102501",
+      "label": null,
+      "num": 11
+    },
+    {
+      "source": "2059359",
+      "target": "102501",
+      "label": null,
+      "num": 15
+    },
+    {
+      "source": "2009153",
+      "target": "102501",
+      "label": null,
+      "num": 10
+    },
+    {
+      "source": "1936341",
+      "target": "102501",
+      "label": null,
+      "num": 25
+    },
+    {
+      "source": "413446",
+      "target": "102501",
+      "label": null,
+      "num": 13
+    },
+    {
+      "source": "366181",
+      "target": "102501",
+      "label": null,
+      "num": 5
+    },
+    {
+      "source": "1916095",
+      "target": "769249",
+      "label": null,
+      "num": 10
+    },
+    {
+      "source": "769454",
+      "target": "769249",
+      "label": null,
+      "num": 6
+    },
+    {
+      "source": "1985266",
+      "target": "2001191",
+      "label": null,
+      "num": 58
+    },
+    {
+      "source": "1929377",
+      "target": "2001191",
+      "label": null,
+      "num": 5
+    },
+    {
+      "source": "846733",
+      "target": "2001191",
+      "label": null,
+      "num": 5
+    },
+    {
+      "source": "418378",
+      "target": "2001191",
+      "label": null,
+      "num": 18
+    },
+    {
+      "source": "2095668",
+      "target": "2046376",
+      "label": null,
+      "num": 6
+    },
+    {
+      "source": "2126134",
+      "target": "2046376",
+      "label": null,
+      "num": 141
+    },
+    {
+      "source": "2042520",
+      "target": "2046376",
+      "label": null,
+      "num": 31
+    },
+    {
+      "source": "2031697",
+      "target": "2046376",
+      "label": null,
+      "num": 156
+    },
+    {
+      "source": "1976069",
+      "target": "2046376",
+      "label": null,
+      "num": 10
+    },
+    {
+      "source": "1051052",
+      "target": "2046376",
+      "label": null,
+      "num": 101
+    },
+    {
+      "source": "355708",
+      "target": "2046376",
+      "label": null,
+      "num": 9
+    },
+    {
+      "source": "2033973",
+      "target": "2030939",
+      "label": null,
+      "num": 8
+    },
+    {
+      "source": "347904",
+      "target": "2030939",
+      "label": null,
+      "num": 14
+    },
+    {
+      "source": "2126346",
+      "target": "1898497",
+      "label": null,
+      "num": 9
+    },
+    {
+      "source": "1857475",
+      "target": "1898497",
+      "label": null,
+      "num": 5
+    },
+    {
+      "source": "2042881",
+      "target": "1777195",
+      "label": null,
+      "num": 7
+    },
+    {
+      "source": "1972222",
+      "target": "1777195",
+      "label": null,
+      "num": 17
+    },
+    {
+      "source": "1966719",
+      "target": "1777195",
+      "label": null,
+      "num": 13
+    },
+    {
+      "source": "1879774",
+      "target": "1777195",
+      "label": null,
+      "num": 6
+    },
+    {
+      "source": "1888003",
+      "target": "1777195",
+      "label": null,
+      "num": 8
+    },
+    {
+      "source": "884461",
+      "target": "1777195",
+      "label": null,
+      "num": 45
+    },
+    {
+      "source": "846733",
+      "target": "1777195",
+      "label": null,
+      "num": 59
+    },
+    {
+      "source": "141473",
+      "target": "1777195",
+      "label": null,
+      "num": 75
+    },
+    {
+      "source": "418057",
+      "target": "2042959",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "2053286",
+      "target": "2042959",
+      "label": null,
+      "num": 3
+    },
+    {
+      "source": "2068924",
+      "target": "2042959",
+      "label": null,
+      "num": 2
+    },
+    {
+      "source": "846733",
+      "target": "2042959",
+      "label": null,
+      "num": 4
+    },
+    {
+      "source": "416380",
+      "target": "2042959",
+      "label": null,
+      "num": 21
+    },
+    {
+      "source": "2042881",
+      "target": "2042959",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "418137",
+      "target": "2042959",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "1199484",
+      "target": "2042959",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "1116606",
+      "target": "2042959",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "413816",
+      "target": "2042959",
+      "label": null,
+      "num": 3
+    },
+    {
+      "source": "664491",
+      "target": "2042959",
+      "label": null,
+      "num": 3
+    },
+    {
+      "source": "1199484",
+      "target": "2053286",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "2041814",
+      "target": "2053286",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "664491",
+      "target": "2053286",
+      "label": null,
+      "num": 11
+    },
+    {
+      "source": "2113301",
+      "target": "2041814",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "78972",
+      "target": "2041814",
+      "label": null,
+      "num": 2
+    },
+    {
+      "source": "416380",
+      "target": "2041814",
+      "label": null,
+      "num": 2
+    },
+    {
+      "source": "884461",
+      "target": "2041814",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "1199484",
+      "target": "2041814",
+      "label": null,
+      "num": 3
+    },
+    {
+      "source": "378756",
+      "target": "2041814",
+      "label": null,
+      "num": 10
+    },
+    {
+      "source": "366181",
+      "target": "2041814",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "1989332",
+      "target": "1199484",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "418057",
+      "target": "1199484",
+      "label": null,
+      "num": 13
+    },
+    {
+      "source": "1916095",
+      "target": "1199484",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "2027313",
+      "target": "1199484",
+      "label": null,
+      "num": 48
+    },
+    {
+      "source": "366181",
+      "target": "1199484",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "664491",
+      "target": "1199484",
+      "label": null,
+      "num": 8
+    },
+    {
+      "source": "418057",
+      "target": "664491",
+      "label": null,
+      "num": 10
+    },
+    {
+      "source": "2059359",
+      "target": "664491",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "846733",
+      "target": "664491",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "416380",
+      "target": "664491",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "38990",
+      "target": "664491",
+      "label": null,
+      "num": 3
+    },
+    {
+      "source": "2009153",
+      "target": "664491",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "378756",
+      "target": "664491",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "413816",
+      "target": "664491",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "78972",
+      "target": "643557",
+      "label": null,
+      "num": 2
+    },
+    {
+      "source": "1882114",
+      "target": "643557",
+      "label": null,
+      "num": 2
+    },
+    {
+      "source": "1116606",
+      "target": "643557",
+      "label": null,
+      "num": 3
+    },
+    {
+      "source": "413816",
+      "target": "643557",
+      "label": null,
+      "num": 2
+    },
+    {
+      "source": "78972",
+      "target": "1882114",
+      "label": null,
+      "num": 30
+    },
+    {
+      "source": "413816",
+      "target": "1882114",
+      "label": null,
+      "num": 30
+    },
+    {
+      "source": "78972",
+      "target": "413816",
+      "label": null,
+      "num": 42
+    },
+    {
+      "source": "418137",
+      "target": "413816",
+      "label": null,
+      "num": 2
+    },
+    {
+      "source": "1972684",
+      "target": "413816",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "1116606",
+      "target": "413816",
+      "label": null,
+      "num": 2
+    },
+    {
+      "source": "418378",
+      "target": "413816",
+      "label": null,
+      "num": 7
+    },
+    {
+      "source": "366181",
+      "target": "413816",
+      "label": null,
+      "num": 2
+    },
+    {
+      "source": "1116606",
+      "target": "78972",
+      "label": null,
+      "num": 2
+    },
+    {
+      "source": "2027313",
+      "target": "1944384",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "1857475",
+      "target": "1944384",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "846733",
+      "target": "1944384",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "347904",
+      "target": "1944384",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "418137",
+      "target": "1944384",
+      "label": null,
+      "num": 2
+    },
+    {
+      "source": "279501",
+      "target": "1944384",
+      "label": null,
+      "num": 2
+    },
+    {
+      "source": "418057",
+      "target": "2027313",
+      "label": null,
+      "num": 68
+    },
+    {
+      "source": "1989332",
+      "target": "2027313",
+      "label": null,
+      "num": 14
+    },
+    {
+      "source": "1916095",
+      "target": "2027313",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "279501",
+      "target": "2027313",
+      "label": null,
+      "num": 81
+    },
+    {
+      "source": "418017",
+      "target": "2027313",
+      "label": null,
+      "num": 13
+    },
+    {
+      "source": "418057",
+      "target": "1989332",
+      "label": null,
+      "num": 7
+    },
+    {
+      "source": "38990",
+      "target": "1989332",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "355708",
+      "target": "1989332",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "1987381",
+      "target": "1989332",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "1256538",
+      "target": "1989332",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "279501",
+      "target": "1989332",
+      "label": null,
+      "num": 4
+    },
+    {
+      "source": "418017",
+      "target": "1989332",
+      "label": null,
+      "num": 2
+    },
+    {
+      "source": "2039641",
+      "target": "1987381",
+      "label": null,
+      "num": 5
+    },
+    {
+      "source": "413446",
+      "target": "1987381",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "2042520",
+      "target": "1256538",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "3621",
+      "target": "1256538",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "2113301",
+      "target": "418057",
+      "label": null,
+      "num": 18
+    },
+    {
+      "source": "1916095",
+      "target": "418057",
+      "label": null,
+      "num": 3
+    },
+    {
+      "source": "1992095",
+      "target": "418057",
+      "label": null,
+      "num": 2
+    },
+    {
+      "source": "846733",
+      "target": "418057",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "370740",
+      "target": "418057",
+      "label": null,
+      "num": 2
+    },
+    {
+      "source": "416380",
+      "target": "418057",
+      "label": null,
+      "num": 3
+    },
+    {
+      "source": "38990",
+      "target": "418057",
+      "label": null,
+      "num": 6
+    },
+    {
+      "source": "2126346",
+      "target": "418057",
+      "label": null,
+      "num": 21
+    },
+    {
+      "source": "2039641",
+      "target": "418057",
+      "label": null,
+      "num": 4
+    },
+    {
+      "source": "279501",
+      "target": "418057",
+      "label": null,
+      "num": 13
+    },
+    {
+      "source": "366181",
+      "target": "418057",
+      "label": null,
+      "num": 4
+    },
+    {
+      "source": "2113301",
+      "target": "418017",
+      "label": null,
+      "num": 8
+    },
+    {
+      "source": "1916095",
+      "target": "418017",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "2068924",
+      "target": "418017",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "38990",
+      "target": "418017",
+      "label": null,
+      "num": 4
+    },
+    {
+      "source": "2126346",
+      "target": "418017",
+      "label": null,
+      "num": 6
+    },
+    {
+      "source": "2039641",
+      "target": "418017",
+      "label": null,
+      "num": 6
+    },
+    {
+      "source": "374566",
+      "target": "418017",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "279501",
+      "target": "418017",
+      "label": null,
+      "num": 4
+    },
+    {
+      "source": "413233",
+      "target": "355708",
+      "label": null,
+      "num": 9
+    },
+    {
+      "source": "2042520",
+      "target": "355708",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "2126134",
+      "target": "355708",
+      "label": null,
+      "num": 11
+    },
+    {
+      "source": "416380",
+      "target": "279501",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "1916095",
+      "target": "38990",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "1051052",
+      "target": "2126134",
+      "label": null,
+      "num": 36
+    },
+    {
+      "source": "778161",
+      "target": "2126134",
+      "label": null,
+      "num": 3
+    },
+    {
+      "source": "2042520",
+      "target": "2126134",
+      "label": null,
+      "num": 10
+    },
+    {
+      "source": "2031697",
+      "target": "2126134",
+      "label": null,
+      "num": 12
+    },
+    {
+      "source": "1976069",
+      "target": "2126134",
+      "label": null,
+      "num": 5
+    },
+    {
+      "source": "2095668",
+      "target": "2126134",
+      "label": null,
+      "num": 11
+    },
+    {
+      "source": "278860",
+      "target": "2126134",
+      "label": null,
+      "num": 7
+    },
+    {
+      "source": "413233",
+      "target": "778161",
+      "label": null,
+      "num": 2
+    },
+    {
+      "source": "1916979",
+      "target": "778161",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "1985835",
+      "target": "778161",
+      "label": null,
+      "num": 7
+    },
+    {
+      "source": "2095668",
+      "target": "778161",
+      "label": null,
+      "num": 13
+    },
+    {
+      "source": "278860",
+      "target": "778161",
+      "label": null,
+      "num": 68
+    },
+    {
+      "source": "1051052",
+      "target": "2095668",
+      "label": null,
+      "num": 3
+    },
+    {
+      "source": "844401",
+      "target": "2095668",
+      "label": null,
+      "num": 2
+    },
+    {
+      "source": "2031697",
+      "target": "2095668",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "278860",
+      "target": "2095668",
+      "label": null,
+      "num": 87
+    },
+    {
+      "source": "2059359",
+      "target": "1985835",
+      "label": null,
+      "num": 4
+    },
+    {
+      "source": "1873540",
+      "target": "1985835",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "370740",
+      "target": "1985835",
+      "label": null,
+      "num": 8
+    },
+    {
+      "source": "2042881",
+      "target": "1985835",
+      "label": null,
+      "num": 2
+    },
+    {
+      "source": "2009153",
+      "target": "1985835",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "278860",
+      "target": "1985835",
+      "label": null,
+      "num": 2
+    },
+    {
+      "source": "1924415",
+      "target": "1916979",
+      "label": null,
+      "num": 2
+    },
+    {
+      "source": "443343",
+      "target": "1916979",
+      "label": null,
+      "num": 8
+    },
+    {
+      "source": "278860",
+      "target": "1916979",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "1924415",
+      "target": "413233",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "366181",
+      "target": "413233",
+      "label": null,
+      "num": 2
+    },
+    {
+      "source": "844401",
+      "target": "278860",
+      "label": null,
+      "num": 2
+    },
+    {
+      "source": "2124765",
+      "target": "2113301",
+      "label": null,
+      "num": 2
+    },
+    {
+      "source": "370740",
+      "target": "2113301",
+      "label": null,
+      "num": 59
+    },
+    {
+      "source": "417897",
+      "target": "2039641",
+      "label": null,
+      "num": 2
+    },
+    {
+      "source": "1992095",
+      "target": "2039641",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "846733",
+      "target": "2039641",
+      "label": null,
+      "num": 2
+    },
+    {
+      "source": "418137",
+      "target": "2039641",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "366181",
+      "target": "2039641",
+      "label": null,
+      "num": 8
+    },
+    {
+      "source": "1955415",
+      "target": "1992095",
+      "label": null,
+      "num": 4
+    },
+    {
+      "source": "443343",
+      "target": "1992095",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "278096",
+      "target": "1992095",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "141473",
+      "target": "846733",
+      "label": null,
+      "num": 21
+    },
+    {
+      "source": "1985266",
+      "target": "846733",
+      "label": null,
+      "num": 6
+    },
+    {
+      "source": "418378",
+      "target": "846733",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "418378",
+      "target": "416380",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "366181",
+      "target": "416380",
+      "label": null,
+      "num": 3
+    },
+    {
+      "source": "1051052",
+      "target": "370740",
+      "label": null,
+      "num": 2
+    },
+    {
+      "source": "1874059",
+      "target": "370740",
+      "label": null,
+      "num": 6
+    },
+    {
+      "source": "378756",
+      "target": "366181",
+      "label": null,
+      "num": 2
+    },
+    {
+      "source": "367312",
+      "target": "1924415",
+      "label": null,
+      "num": 4
+    },
+    {
+      "source": "443343",
+      "target": "1924415",
+      "label": null,
+      "num": 3
+    },
+    {
+      "source": "1961462",
+      "target": "2009153",
+      "label": null,
+      "num": 3
+    },
+    {
+      "source": "2059359",
+      "target": "2009153",
+      "label": null,
+      "num": 138
+    },
+    {
+      "source": "1961462",
+      "target": "2059359",
+      "label": null,
+      "num": 3
+    },
+    {
+      "source": "1879774",
+      "target": "2059359",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "1968917",
+      "target": "1961462",
+      "label": null,
+      "num": 5
+    },
+    {
+      "source": "769454",
+      "target": "1051052",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "2042520",
+      "target": "1051052",
+      "label": null,
+      "num": 24
+    },
+    {
+      "source": "2031697",
+      "target": "1051052",
+      "label": null,
+      "num": 23
+    },
+    {
+      "source": "3621",
+      "target": "1051052",
+      "label": null,
+      "num": 12
+    },
+    {
+      "source": "1976069",
+      "target": "1051052",
+      "label": null,
+      "num": 4
+    },
+    {
+      "source": "2124765",
+      "target": "2042520",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "769454",
+      "target": "2042520",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "2031697",
+      "target": "2042520",
+      "label": null,
+      "num": 2
+    },
+    {
+      "source": "1976069",
+      "target": "2042520",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "1976069",
+      "target": "2031697",
+      "label": null,
+      "num": 4
+    },
+    {
+      "source": "50593",
+      "target": "2031697",
+      "label": null,
+      "num": 4
+    },
+    {
+      "source": "2008659",
+      "target": "3621",
+      "label": null,
+      "num": 38
+    },
+    {
+      "source": "417897",
+      "target": "2124765",
+      "label": null,
+      "num": 12
+    },
+    {
+      "source": "378756",
+      "target": "2124765",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "378756",
+      "target": "417897",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "2068924",
+      "target": "378756",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "418137",
+      "target": "378756",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "383394",
+      "target": "119217",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "884461",
+      "target": "443343",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "1966719",
+      "target": "278096",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "418137",
+      "target": "2068924",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "418378",
+      "target": "1985266",
+      "label": null,
+      "num": 20
+    },
+    {
+      "source": "1929377",
+      "target": "1985266",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "1968917",
+      "target": "1874059",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "2023305",
+      "target": "28647",
+      "label": null,
+      "num": 21
+    },
+    {
+      "source": "2008659",
+      "target": "1968917",
+      "label": null,
+      "num": 2
+    },
+    {
+      "source": "347904",
+      "target": "2033973",
+      "label": null,
+      "num": 1
+    },
+    {
+      "source": "1917770",
+      "target": "1923499",
+      "label": null,
+      "num": 54
+    }
+  ]
+                } ]
+            };
+			
+				var linkList= option.series[0].links;
+				for(var i in linkList){
+					let linkObj = linkList[i];
+					linkObj.itemStyle={normal:{
+						lineWidth:linkObj.num/10,
+						text:linkObj.num,
+						color:'#cccccc',
+						brushType: 'stroke',
+						//shadowColor: '#cccccc',
+						textPosition: 'inside',
+						textFont: 'normal 14px 宋体',
+						strokeColor: '#cccccc'
+						}};
+					}
+					
+				
+					
+				myChart.setOption(option);
+			function contains(arrays, obj) {
+				var i = arrays.length;
+				while (i--) {
+					if (arrays[i].name == obj) {
+						return i;
+					}
+				}
+				return -1;
+				}
+				
+             var ecConfig = require('echarts/config');
+            function openOrFold(param) {
+                var option = myChart.getOption();
+                var nodesOption = option.series[0].nodes;
+                var linksOption = option.series[0].links;
+                var data = param.data;
+                var linksNodes = [];
+
+                var categoryLength = option.series[0].categories.length;
+
+                if (data.category == (categoryLength - 1)) {
+                   // alert(data.label);
+				   return;
+                }
+
+                if (data != null && data != undefined) {
+                    if (data.flag) {
+
+                        for ( var m in linksOption) {
+
+                            if (linksOption[m].target == data.id) {
+                                linksNodes.push(linksOption[m].source);
+                            }
+                        }
+                        if (linksNodes != null && linksNodes != undefined) {
+                            for ( var p in linksNodes) {
+								let index = contains(nodesOption,linksNodes[p]);
+                                nodesOption[index].ignore = false;
+                                nodesOption[index].flag = true;
+                            }
+                        }
+						
+                        nodesOption[contains(nodesOption,data.id)].flag = false;
+                        myChart.setOption(option);
+                    } else {
+
+                        
+						
+						for ( var m in linksOption) {
+						
+                            if (linksOption[m].target == data.id) {
+                                linksNodes.push(linksOption[m].source);
+                            }
+                            if (linksNodes != null && linksNodes != undefined) {
+								
+                                for ( var n in linksNodes) {
+                                    if (linksOption[m].target == linksNodes[n]) {
+                                        linksNodes.push(linksOption[m].source);
+                                    }
+                                }
+								
+                            }
+                        }
+						
+                        if (linksNodes != null && linksNodes != undefined) {
+                            for ( var p in linksNodes) {
+								let index = contains(nodesOption,linksNodes[p]);
+                                nodesOption[index].ignore = true;
+                                nodesOption[index].flag = true;
+                            }
+                        }
+                        nodesOption[contains(nodesOption,data.id)].flag = true;
+                        myChart.setOption(option);
+                    }
+                }
+            }
+            myChart.on(ecConfig.EVENT.CLICK, openOrFold);
+        });
+    </script>
+
+</body>
+</html>

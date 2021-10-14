@@ -1,0 +1,5016 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test</title>
+</head>
+<body>
+    <div id="main" style=" height:800px"></div>
+    <div id="ss" ></div>
+    <script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
+	
+    <script type="text/javascript">
+
+        require.config({
+            paths : {
+                echarts : 'http://echarts.baidu.com/build/dist'
+            }
+        });
+        require([ "echarts", "echarts/chart/force"], function(ec) {
+            var myChart = ec.init(document.getElementById('main'))
+            var option = {
+                tooltip : {
+					trigger: 'item',
+					formatter:function(params){
+					
+                    if(params.data.category!= undefined){
+						return params.data.label;
+					}else{
+						return params.data.flow;
+					}
+					
+                }
+                },
+				legend: {
+							x: 'left',
+							data:['本人','指纹','相关学者','相关指纹' ]
+						},
+                series : [ {
+                    type : 'force',
+                 
+                    itemStyle : {
+                        normal : {
+                            label : {show : true},
+                            nodeStyle : {
+                                brushType : 'both',
+                                borderColor : 'rgba(255,215,0,0.4)',
+                                borderWidth : 1
+								
+                            }
+                        }
+                    },
+					
+                    categories : [ {name : '本人'}, {name : '指纹'}, {name : '相关学者'},{name : '相关指纹'} ],
+					useWorker: true, //是否在浏览器支持 web worker 的时候把布局计算放入 web worker 中
+					focusNodeAdjacency: true,  //突出相关
+					gravity: 1,  //向心力系数，系数越大则节点越往中心靠拢
+					scaling:7,	 //布局缩放系数，并不完全精确, 效果跟布局大小类似，越小越紧密
+					roam: true, //	是否开启滚轮缩放和拖拽漫游，默认为false（关闭），其他有效输入为true（开启），'scale'（仅开启滚轮缩放），'move'（仅开启拖拽漫游）
+					large: false,
+					linkSymbol: 'arrow',
+					
+                     nodes : [
+    {
+      "id": 2019270,
+      "category": 0,
+      "name": "2019270",
+      "label": "赵东元",
+      "symbolSize": 55,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000274611,
+      "category": 1,
+      "name": "1000274611",
+      "label": "synthesis",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000300677,
+      "category": 1,
+      "name": "1000300677",
+      "label": "mesoporous materials",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000458678,
+      "category": 1,
+      "name": "1000458678",
+      "label": "jigs(templates)",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000126595,
+      "category": 1,
+      "name": "1000126595",
+      "label": "Adsorption",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000247899,
+      "category": 1,
+      "name": "1000247899",
+      "label": "Self-assembly",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000306185,
+      "category": 1,
+      "name": "1000306185",
+      "label": "Carbon",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 303500,
+      "category": 2,
+      "name": "303500",
+      "label": "Yuan Gao",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 339344,
+      "category": 2,
+      "name": "339344",
+      "label": "Lü Wang",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 846589,
+      "category": 2,
+      "name": "846589",
+      "label": "Chen Chen",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2080179,
+      "category": 2,
+      "name": "2080179",
+      "label": "赵鑫",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2031337,
+      "category": 2,
+      "name": "2031337",
+      "label": "王爱勤",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1444648,
+      "category": 2,
+      "name": "1444648",
+      "label": "苏宝连",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 241874,
+      "category": 2,
+      "name": "241874",
+      "label": "Meng Li",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1078794,
+      "category": 2,
+      "name": "1078794",
+      "label": "Bo ,li",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1894957,
+      "category": 2,
+      "name": "1894957",
+      "label": "Ferdi Schüth",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 297551,
+      "category": 2,
+      "name": "297551",
+      "label": "Wei Feng",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1898497,
+      "category": 2,
+      "name": "1898497",
+      "label": "Serge Kaliaguine",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1961462,
+      "category": 2,
+      "name": "1961462",
+      "label": "肖丰收",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 249990,
+      "category": 2,
+      "name": "249990",
+      "label": "Yong Huang",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 417876,
+      "category": 2,
+      "name": "417876",
+      "label": "王玮",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2039641,
+      "category": 2,
+      "name": "2039641",
+      "label": "Min Chen",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 413873,
+      "category": 2,
+      "name": "413873",
+      "label": "徐骏",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1766854,
+      "category": 2,
+      "name": "1766854",
+      "label": "Ajayan Vinu",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 404781,
+      "category": 2,
+      "name": "404781",
+      "label": "Lihua Wang",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1894721,
+      "category": 2,
+      "name": "1894721",
+      "label": "屠波",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1906433,
+      "category": 2,
+      "name": "1906433",
+      "label": "Mark MacLachlan",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 370740,
+      "category": 2,
+      "name": "370740",
+      "label": "Mietek Jaroniec",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 342751,
+      "category": 2,
+      "name": "342751",
+      "label": "张金龙",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 664491,
+      "category": 2,
+      "name": "664491",
+      "label": "Lì Lì",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1918176,
+      "category": 2,
+      "name": "1918176",
+      "label": "Mika Sillanpää",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2051779,
+      "category": 2,
+      "name": "2051779",
+      "label": "Jing Zhang",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2035256,
+      "category": 2,
+      "name": "2035256",
+      "label": "Chengzhong Yu",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 46964,
+      "category": 2,
+      "name": "46964",
+      "label": "Kun Zhang",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 410185,
+      "category": 2,
+      "name": "410185",
+      "label": "Bin Wang",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 990606,
+      "category": 2,
+      "name": "990606",
+      "label": "Li Xu",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 320506,
+      "category": 2,
+      "name": "320506",
+      "label": "Qiang Wang",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1417633,
+      "category": 2,
+      "name": "1417633",
+      "label": "Li Wang",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2018953,
+      "category": 2,
+      "name": "2018953",
+      "label": "逯高清",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 646308,
+      "category": 2,
+      "name": "646308",
+      "label": "Yu Liu",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 751085,
+      "category": 2,
+      "name": "751085",
+      "label": "Jieshan Qiu",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 400352,
+      "category": 2,
+      "name": "400352",
+      "label": "Hao Wu",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2022440,
+      "category": 2,
+      "name": "2022440",
+      "label": "Arne faunce Thomas",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1051052,
+      "category": 2,
+      "name": "1051052",
+      "label": "窦士学",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2042959,
+      "category": 2,
+      "name": "2042959",
+      "label": "Hui Xu",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1896395,
+      "category": 2,
+      "name": "1896395",
+      "label": "Ulrich Wiesner",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 932824,
+      "category": 2,
+      "name": "932824",
+      "label": "Ray leslie Frost",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2043809,
+      "category": 2,
+      "name": "2043809",
+      "label": "王琪",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 371770,
+      "category": 2,
+      "name": "371770",
+      "label": "魏伟",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1175560,
+      "category": 2,
+      "name": "1175560",
+      "label": "Paul Chu",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 247246,
+      "category": 2,
+      "name": "247246",
+      "label": "Lei Chen",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 859422,
+      "category": 2,
+      "name": "859422",
+      "label": "唐本忠",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 279845,
+      "category": 2,
+      "name": "279845",
+      "label": "Fei Liu",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 958442,
+      "category": 2,
+      "name": "958442",
+      "label": "Liping Wang",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 863786,
+      "category": 2,
+      "name": "863786",
+      "label": "Haibo Li",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 267723,
+      "category": 2,
+      "name": "267723",
+      "label": "Jíří Čejka",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 413357,
+      "category": 2,
+      "name": "413357",
+      "label": "王鹏",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 842384,
+      "category": 2,
+      "name": "842384",
+      "label": "Thomas Bein",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2037784,
+      "category": 2,
+      "name": "2037784",
+      "label": "俞书宏",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1900103,
+      "category": 2,
+      "name": "1900103",
+      "label": "David Grosso",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 997054,
+      "category": 2,
+      "name": "997054",
+      "label": "Peng Li",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2046376,
+      "category": 2,
+      "name": "2046376",
+      "label": "刘华坤",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 416786,
+      "category": 2,
+      "name": "416786",
+      "label": "张薇",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 279789,
+      "category": 2,
+      "name": "279789",
+      "label": "刘磊 ",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1391558,
+      "category": 2,
+      "name": "1391558",
+      "label": "康飞宇",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1985835,
+      "category": 2,
+      "name": "1985835",
+      "label": "戴胜",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 339333,
+      "category": 2,
+      "name": "339333",
+      "label": "田禾",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 410174,
+      "category": 2,
+      "name": "410174",
+      "label": "李国安",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2059658,
+      "category": 2,
+      "name": "2059658",
+      "label": "赵修松",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 66587,
+      "category": 2,
+      "name": "66587",
+      "label": "Kimoon Kim",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 364992,
+      "category": 2,
+      "name": "364992",
+      "label": "Feng Xu",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1872521,
+      "category": 2,
+      "name": "1872521",
+      "label": "Christof Woell",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1988087,
+      "category": 2,
+      "name": "1988087",
+      "label": "Zhongyong Yuan",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 647027,
+      "category": 2,
+      "name": "647027",
+      "label": "Ulrich Schubert",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 750843,
+      "category": 2,
+      "name": "750843",
+      "label": "Jonathan Hill",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 845523,
+      "category": 2,
+      "name": "845523",
+      "label": "孙润仓",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 376039,
+      "category": 2,
+      "name": "376039",
+      "label": "Möhwald H.",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1924415,
+      "category": 2,
+      "name": "1924415",
+      "label": "Craig Hawker",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 300334,
+      "category": 2,
+      "name": "300334",
+      "label": "乔世璋",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1132813,
+      "category": 2,
+      "name": "1132813",
+      "label": "孙剑",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 312261,
+      "category": 2,
+      "name": "312261",
+      "label": "Chao Wang",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1972972,
+      "category": 2,
+      "name": "1972972",
+      "label": "侯红卫",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2059769,
+      "category": 2,
+      "name": "2059769",
+      "label": "Li li ZHANG",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2038302,
+      "category": 2,
+      "name": "2038302",
+      "label": "bo Wang",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2015870,
+      "category": 2,
+      "name": "2015870",
+      "label": "殷亚东",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2006498,
+      "category": 2,
+      "name": "2006498",
+      "label": "朱广山",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1821566,
+      "category": 2,
+      "name": "1821566",
+      "label": "Stefan Kaskel",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 738062,
+      "category": 2,
+      "name": "738062",
+      "label": "Christopher Jones",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2051285,
+      "category": 2,
+      "name": "2051285",
+      "label": "陈超",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1962095,
+      "category": 2,
+      "name": "1962095",
+      "label": "Andreas Hirsch",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2017471,
+      "category": 2,
+      "name": "2017471",
+      "label": "Morinobu Endo",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 417962,
+      "category": 2,
+      "name": "417962",
+      "label": "Jun Hu",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2108019,
+      "category": 2,
+      "name": "2108019",
+      "label": "李和兴",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1987986,
+      "category": 2,
+      "name": "1987986",
+      "label": "曾华淳",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2059359,
+      "category": 2,
+      "name": "2059359",
+      "label": "于吉红",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2053105,
+      "category": 2,
+      "name": "2053105",
+      "label": "jun Wang",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1983026,
+      "category": 2,
+      "name": "1983026",
+      "label": "Shilun Qiu",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 413404,
+      "category": 2,
+      "name": "413404",
+      "label": "Changsik Ha",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1777195,
+      "category": 2,
+      "name": "1777195",
+      "label": "Abdullah Asiri",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 368756,
+      "category": 2,
+      "name": "368756",
+      "label": " Van Tendeloo G.",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1974296,
+      "category": 2,
+      "name": "1974296",
+      "label": "Bei Cheng",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1912768,
+      "category": 2,
+      "name": "1912768",
+      "label": "Yury Gogotsi",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 417822,
+      "category": 2,
+      "name": "417822",
+      "label": "lin Li",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 418057,
+      "category": 2,
+      "name": "418057",
+      "label": "Gang Liu",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 279184,
+      "category": 2,
+      "name": "279184",
+      "label": "李泓",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2028923,
+      "category": 2,
+      "name": "2028923",
+      "label": "Wei Xu",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1987626,
+      "category": 2,
+      "name": "1987626",
+      "label": "Clément Sánchez",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2113301,
+      "category": 2,
+      "name": "2113301",
+      "label": "余家国",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 418171,
+      "category": 2,
+      "name": "418171",
+      "label": "李静",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1899910,
+      "category": 2,
+      "name": "1899910",
+      "label": "Katsuhiko Ariga",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2024770,
+      "category": 2,
+      "name": "2024770",
+      "label": "危岩",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 413734,
+      "category": 2,
+      "name": "413734",
+      "label": "Kläus Müllen",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 28659,
+      "category": 2,
+      "name": "28659",
+      "label": "冯新亮",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 846733,
+      "category": 2,
+      "name": "846733",
+      "label": "刘前",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 282120,
+      "category": 2,
+      "name": "282120",
+      "label": "黄维",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 925614,
+      "category": 2,
+      "name": "925614",
+      "label": "Xiaogang Qu",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1961158,
+      "category": 2,
+      "name": "1961158",
+      "label": "Michael kam chiu Tam",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 366181,
+      "category": 2,
+      "name": "366181",
+      "label": "Li Yang",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2036010,
+      "category": 2,
+      "name": "2036010",
+      "label": "张东",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 232517,
+      "category": 2,
+      "name": "232517",
+      "label": "Yang Yü",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2001081,
+      "category": 2,
+      "name": "2001081",
+      "label": "Chaobin He",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1949898,
+      "category": 2,
+      "name": "1949898",
+      "label": "Markus Antonietti",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1199484,
+      "category": 2,
+      "name": "1199484",
+      "label": "Feng Li",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 413816,
+      "category": 2,
+      "name": "413816",
+      "label": "Wei Zhou",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 2008659,
+      "category": 2,
+      "name": "2008659",
+      "label": "Kazuyuki Kuroda",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 197020,
+      "category": 2,
+      "name": "197020",
+      "label": "Bin Xu",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 874075,
+      "category": 2,
+      "name": "874075",
+      "label": "Ling Wang",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 299049,
+      "category": 2,
+      "name": "299049",
+      "label": "施剑林",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 3621,
+      "category": 2,
+      "name": "3621",
+      "label": "山内悠輔",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000283315,
+      "category": 3,
+      "name": "1000283315",
+      "label": "Raman spectrometry",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000277472,
+      "category": 3,
+      "name": "1000277472",
+      "label": "infrared spectroscopy",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000445667,
+      "category": 3,
+      "name": "1000445667",
+      "label": "crystal structure",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000503939,
+      "category": 3,
+      "name": "1000503939",
+      "label": "Magnetic properties",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000374346,
+      "category": 3,
+      "name": "1000374346",
+      "label": "platinum",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000522004,
+      "category": 3,
+      "name": "1000522004",
+      "label": "lithium ion battery",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000411868,
+      "category": 3,
+      "name": "1000411868",
+      "label": "Lignins",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000129292,
+      "category": 3,
+      "name": "1000129292",
+      "label": "Cellulose",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000461990,
+      "category": 3,
+      "name": "1000461990",
+      "label": "DIARYLETHYLENE",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000247196,
+      "category": 3,
+      "name": "1000247196",
+      "label": "Photochromism",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000147986,
+      "category": 3,
+      "name": "1000147986",
+      "label": "Apoptosis",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000504075,
+      "category": 3,
+      "name": "1000504075",
+      "label": "Microstructure",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000288041,
+      "category": 3,
+      "name": "1000288041",
+      "label": "numerical simulation",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000242233,
+      "category": 3,
+      "name": "1000242233",
+      "label": "Plasma immersion ion implantation",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000299847,
+      "category": 3,
+      "name": "1000299847",
+      "label": "graphene",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000246717,
+      "category": 3,
+      "name": "1000246717",
+      "label": "Nanoparticles",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000440657,
+      "category": 3,
+      "name": "1000440657",
+      "label": "Supercapacitors",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000245103,
+      "category": 3,
+      "name": "1000245103",
+      "label": "Ferroelectric materials",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000435917,
+      "category": 3,
+      "name": "1000435917",
+      "label": "Bismuth titanate",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000450465,
+      "category": 3,
+      "name": "1000450465",
+      "label": "water treatment",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000439165,
+      "category": 3,
+      "name": "1000439165",
+      "label": "Photocatalysts",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000275254,
+      "category": 3,
+      "name": "1000275254",
+      "label": "titanium oxides",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000148461,
+      "category": 3,
+      "name": "1000148461",
+      "label": "Zeolites",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000469563,
+      "category": 3,
+      "name": "1000469563",
+      "label": "MICRO-GRID",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000299291,
+      "category": 3,
+      "name": "1000299291",
+      "label": "distributed power generation",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000146668,
+      "category": 3,
+      "name": "1000146668",
+      "label": "Liver Transplantation",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000246005,
+      "category": 3,
+      "name": "1000246005",
+      "label": "Ionic liquids",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000449371,
+      "category": 3,
+      "name": "1000449371",
+      "label": "sensitivity",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000476144,
+      "category": 3,
+      "name": "1000476144",
+      "label": "Optical properties",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000130683,
+      "category": 3,
+      "name": "1000130683",
+      "label": "Cyclodextrins",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000285116,
+      "category": 3,
+      "name": "1000285116",
+      "label": "supramolecular chemistry",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000155126,
+      "category": 3,
+      "name": "1000155126",
+      "label": "Fullerenes",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000156944,
+      "category": 3,
+      "name": "1000156944",
+      "label": "Dendrimers",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000241292,
+      "category": 3,
+      "name": "1000241292",
+      "label": "Critical current density",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000139742,
+      "category": 3,
+      "name": "1000139742",
+      "label": "Periodontosis",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000147195,
+      "category": 3,
+      "name": "1000147195",
+      "label": "Drug Delivery Systems",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000135542,
+      "category": 3,
+      "name": "1000135542",
+      "label": "Newborn Infant",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000454530,
+      "category": 3,
+      "name": "1000454530",
+      "label": "simulating",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000155127,
+      "category": 3,
+      "name": "1000155127",
+      "label": "Carbon Nanotubes",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000477257,
+      "category": 3,
+      "name": "1000477257",
+      "label": "Composites",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000479729,
+      "category": 3,
+      "name": "1000479729",
+      "label": "Mechanical properties",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000133286,
+      "category": 3,
+      "name": "1000133286",
+      "label": "Fluorescence",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000471673,
+      "category": 3,
+      "name": "1000471673",
+      "label": "SILOLE",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000504422,
+      "category": 3,
+      "name": "1000504422",
+      "label": "Organic light emitting diodes",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000510235,
+      "category": 3,
+      "name": "1000510235",
+      "label": "polyfluorenones",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000502398,
+      "category": 3,
+      "name": "1000502398",
+      "label": "Carbon nitride",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000126858,
+      "category": 3,
+      "name": "1000126858",
+      "label": "Alzheimer Disease",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000432446,
+      "category": 3,
+      "name": "1000432446",
+      "label": "Tau",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000271963,
+      "category": 3,
+      "name": "1000271963",
+      "label": "rock mechanics",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000327902,
+      "category": 3,
+      "name": "1000327902",
+      "label": "aluminium phosphate",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000154906,
+      "category": 3,
+      "name": "1000154906",
+      "label": "MicroRNAs",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000493906,
+      "category": 3,
+      "name": "1000493906",
+      "label": "solar cells",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000450704,
+      "category": 3,
+      "name": "1000450704",
+      "label": "zinc oxides",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000505597,
+      "category": 3,
+      "name": "1000505597",
+      "label": "Transmission electron microscopy",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000159398,
+      "category": 3,
+      "name": "1000159398",
+      "label": "Electron Microscope Tomography",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000470171,
+      "category": 3,
+      "name": "1000470171",
+      "label": "PHOTOCATALYTIC",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000156596,
+      "category": 3,
+      "name": "1000156596",
+      "label": "Chitosan",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000289566,
+      "category": 3,
+      "name": "1000289566",
+      "label": "energy storage",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000496548,
+      "category": 3,
+      "name": "1000496548",
+      "label": "measurement",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000273808,
+      "category": 3,
+      "name": "1000273808",
+      "label": "sorption",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000467471,
+      "category": 3,
+      "name": "1000467471",
+      "label": "CUCURBITURIL",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000475770,
+      "category": 3,
+      "name": "1000475770",
+      "label": "Diesel engines",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000131668,
+      "category": 3,
+      "name": "1000131668",
+      "label": "DNA",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000444997,
+      "category": 3,
+      "name": "1000444997",
+      "label": "block copolymers",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000247366,
+      "category": 3,
+      "name": "1000247366",
+      "label": "Polyelectrolytes",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000146862,
+      "category": 3,
+      "name": "1000146862",
+      "label": "Cytokines",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000300136,
+      "category": 3,
+      "name": "1000300136",
+      "label": "ink jet printing",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000472063,
+      "category": 3,
+      "name": "1000472063",
+      "label": "TERPYRIDINE",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000356523,
+      "category": 3,
+      "name": "1000356523",
+      "label": "interface",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000156764,
+      "category": 3,
+      "name": "1000156764",
+      "label": "Nanostructure",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000502419,
+      "category": 3,
+      "name": "1000502419",
+      "label": "Heterogeneous catalysis",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000247373,
+      "category": 3,
+      "name": "1000247373",
+      "label": "Polyimides",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000530619,
+      "category": 3,
+      "name": "1000530619",
+      "label": "Engineering vehicle",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000004999,
+      "category": 3,
+      "name": "1000004999",
+      "label": "Neural network",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000274062,
+      "category": 3,
+      "name": "1000274062",
+      "label": "stable isotopes",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000279202,
+      "category": 3,
+      "name": "1000279202",
+      "label": "membrane",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000012834,
+      "category": 3,
+      "name": "1000012834",
+      "label": "Hollow Fiber",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000135040,
+      "category": 3,
+      "name": "1000135040",
+      "label": "Hydrogenation",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000242280,
+      "category": 3,
+      "name": "1000242280",
+      "label": "Power quality",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000485674,
+      "category": 3,
+      "name": "1000485674",
+      "label": "Nanocomposites",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000139264,
+      "category": 3,
+      "name": "1000139264",
+      "label": "Palladium",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000140079,
+      "category": 3,
+      "name": "1000140079",
+      "label": "Photosynthesis",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000606324,
+      "category": 3,
+      "name": "1000606324",
+      "label": "MICROWAVE",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000430753,
+      "category": 3,
+      "name": "1000430753",
+      "label": "stabilization",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000134819,
+      "category": 3,
+      "name": "1000134819",
+      "label": "HIV",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000146103,
+      "category": 3,
+      "name": "1000146103",
+      "label": "HIV-1",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000302306,
+      "category": 3,
+      "name": "1000302306",
+      "label": "surface chemistry",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000302479,
+      "category": 3,
+      "name": "1000302479",
+      "label": "thin films",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000247356,
+      "category": 3,
+      "name": "1000247356",
+      "label": "Polyanilines",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000503130,
+      "category": 3,
+      "name": "1000503130",
+      "label": "Electrospinning",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000186164,
+      "category": 3,
+      "name": "1000186164",
+      "label": "perovskite",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000160677,
+      "category": 3,
+      "name": "1000160677",
+      "label": "Click Chemistry",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000504067,
+      "category": 3,
+      "name": "1000504067",
+      "label": "Microporous materials",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000270857,
+      "category": 3,
+      "name": "1000270857",
+      "label": "polymorphism",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    },
+    {
+      "id": 1000447535,
+      "category": 3,
+      "name": "1000447535",
+      "label": "lithium sulfur batteries",
+      "symbolSize": 40,
+      "ignore": false,
+      "flag": false
+    }
+  ],
+    links: [
+    {
+      "source": "1000274611",
+      "target": "2019270",
+      "label": "赵东元 使用指纹 'synthesis' 59次",
+      "num": 59
+    },
+    {
+      "source": "1000300677",
+      "target": "2019270",
+      "label": "赵东元 使用指纹 'mesoporous materials' 103次",
+      "num": 103
+    },
+    {
+      "source": "1000458678",
+      "target": "2019270",
+      "label": "赵东元 使用指纹 'jigs(templates)' 22次",
+      "num": 22
+    },
+    {
+      "source": "1000126595",
+      "target": "2019270",
+      "label": "赵东元 使用指纹 'Adsorption' 20次",
+      "num": 20
+    },
+    {
+      "source": "1000247899",
+      "target": "2019270",
+      "label": "赵东元 使用指纹 'Self-assembly' 19次",
+      "num": 19
+    },
+    {
+      "source": "1000306185",
+      "target": "2019270",
+      "label": "赵东元 使用指纹 'Carbon' 18次",
+      "num": 18
+    },
+    {
+      "source": "1894721",
+      "target": "1000300677",
+      "label": "屠波 使用指纹 'mesoporous materials' 31次",
+      "num": 31
+    },
+    {
+      "source": "1894721",
+      "target": "1000274611",
+      "label": "屠波 使用指纹 'synthesis' 27次",
+      "num": 27
+    },
+    {
+      "source": "1894721",
+      "target": "1000458678",
+      "label": "屠波 使用指纹 'jigs(templates)' 13次",
+      "num": 13
+    },
+    {
+      "source": "1894721",
+      "target": "1000247899",
+      "label": "屠波 使用指纹 'Self-assembly' 8次",
+      "num": 8
+    },
+    {
+      "source": "1894721",
+      "target": "1000306185",
+      "label": "屠波 使用指纹 'Carbon' 7次",
+      "num": 7
+    },
+    {
+      "source": "1777195",
+      "target": "1000126595",
+      "label": "Abdullah Asiri 使用指纹 'Adsorption' 6次",
+      "num": 6
+    },
+    {
+      "source": "1777195",
+      "target": "1000274611",
+      "label": "Abdullah Asiri 使用指纹 'synthesis' 10次",
+      "num": 10
+    },
+    {
+      "source": "1444648",
+      "target": "1000300677",
+      "label": "苏宝连 使用指纹 'mesoporous materials' 17次",
+      "num": 17
+    },
+    {
+      "source": "1444648",
+      "target": "1000274611",
+      "label": "苏宝连 使用指纹 'synthesis' 6次",
+      "num": 6
+    },
+    {
+      "source": "1417633",
+      "target": "1000126595",
+      "label": "Li Wang 使用指纹 'Adsorption' 34次",
+      "num": 34
+    },
+    {
+      "source": "1417633",
+      "target": "1000274611",
+      "label": "Li Wang 使用指纹 'synthesis' 43次",
+      "num": 43
+    },
+    {
+      "source": "1417633",
+      "target": "1000247899",
+      "label": "Li Wang 使用指纹 'Self-assembly' 10次",
+      "num": 10
+    },
+    {
+      "source": "1199484",
+      "target": "1000126595",
+      "label": "Feng Li 使用指纹 'Adsorption' 7次",
+      "num": 7
+    },
+    {
+      "source": "1199484",
+      "target": "1000274611",
+      "label": "Feng Li 使用指纹 'synthesis' 10次",
+      "num": 10
+    },
+    {
+      "source": "1199484",
+      "target": "1000247899",
+      "label": "Feng Li 使用指纹 'Self-assembly' 7次",
+      "num": 7
+    },
+    {
+      "source": "1132813",
+      "target": "1000126595",
+      "label": "孙剑 使用指纹 'Adsorption' 5次",
+      "num": 5
+    },
+    {
+      "source": "1132813",
+      "target": "1000274611",
+      "label": "孙剑 使用指纹 'synthesis' 6次",
+      "num": 6
+    },
+    {
+      "source": "1078794",
+      "target": "1000126595",
+      "label": "Bo ,li 使用指纹 'Adsorption' 6次",
+      "num": 6
+    },
+    {
+      "source": "1078794",
+      "target": "1000274611",
+      "label": "Bo ,li 使用指纹 'synthesis' 5次",
+      "num": 5
+    },
+    {
+      "source": "1078794",
+      "target": "1000247899",
+      "label": "Bo ,li 使用指纹 'Self-assembly' 7次",
+      "num": 7
+    },
+    {
+      "source": "997054",
+      "target": "1000126595",
+      "label": "Peng Li 使用指纹 'Adsorption' 6次",
+      "num": 6
+    },
+    {
+      "source": "997054",
+      "target": "1000274611",
+      "label": "Peng Li 使用指纹 'synthesis' 7次",
+      "num": 7
+    },
+    {
+      "source": "990606",
+      "target": "1000247899",
+      "label": "Li Xu 使用指纹 'Self-assembly' 8次",
+      "num": 8
+    },
+    {
+      "source": "990606",
+      "target": "1000274611",
+      "label": "Li Xu 使用指纹 'synthesis' 18次",
+      "num": 18
+    },
+    {
+      "source": "958442",
+      "target": "1000126595",
+      "label": "Liping Wang 使用指纹 'Adsorption' 8次",
+      "num": 8
+    },
+    {
+      "source": "958442",
+      "target": "1000274611",
+      "label": "Liping Wang 使用指纹 'synthesis' 11次",
+      "num": 11
+    },
+    {
+      "source": "932824",
+      "target": "1000126595",
+      "label": "Ray leslie Frost 使用指纹 'Adsorption' 35次",
+      "num": 35
+    },
+    {
+      "source": "932824",
+      "target": "1000274611",
+      "label": "Ray leslie Frost 使用指纹 'synthesis' 7次",
+      "num": 7
+    },
+    {
+      "source": "874075",
+      "target": "1000126595",
+      "label": "Ling Wang 使用指纹 'Adsorption' 5次",
+      "num": 5
+    },
+    {
+      "source": "874075",
+      "target": "1000274611",
+      "label": "Ling Wang 使用指纹 'synthesis' 8次",
+      "num": 8
+    },
+    {
+      "source": "874075",
+      "target": "1000247899",
+      "label": "Ling Wang 使用指纹 'Self-assembly' 10次",
+      "num": 10
+    },
+    {
+      "source": "863786",
+      "target": "1000126595",
+      "label": "Haibo Li 使用指纹 'Adsorption' 6次",
+      "num": 6
+    },
+    {
+      "source": "863786",
+      "target": "1000274611",
+      "label": "Haibo Li 使用指纹 'synthesis' 5次",
+      "num": 5
+    },
+    {
+      "source": "859422",
+      "target": "1000247899",
+      "label": "唐本忠 使用指纹 'Self-assembly' 6次",
+      "num": 6
+    },
+    {
+      "source": "859422",
+      "target": "1000274611",
+      "label": "唐本忠 使用指纹 'synthesis' 10次",
+      "num": 10
+    },
+    {
+      "source": "846733",
+      "target": "1000300677",
+      "label": "刘前 使用指纹 'mesoporous materials' 8次",
+      "num": 8
+    },
+    {
+      "source": "846733",
+      "target": "1000274611",
+      "label": "刘前 使用指纹 'synthesis' 12次",
+      "num": 12
+    },
+    {
+      "source": "846733",
+      "target": "1000126595",
+      "label": "刘前 使用指纹 'Adsorption' 22次",
+      "num": 22
+    },
+    {
+      "source": "846733",
+      "target": "1000247899",
+      "label": "刘前 使用指纹 'Self-assembly' 6次",
+      "num": 6
+    },
+    {
+      "source": "846589",
+      "target": "1000247899",
+      "label": "Chen Chen 使用指纹 'Self-assembly' 6次",
+      "num": 6
+    },
+    {
+      "source": "846589",
+      "target": "1000274611",
+      "label": "Chen Chen 使用指纹 'synthesis' 8次",
+      "num": 8
+    },
+    {
+      "source": "751085",
+      "target": "1000126595",
+      "label": "Jieshan Qiu 使用指纹 'Adsorption' 6次",
+      "num": 6
+    },
+    {
+      "source": "751085",
+      "target": "1000274611",
+      "label": "Jieshan Qiu 使用指纹 'synthesis' 5次",
+      "num": 5
+    },
+    {
+      "source": "751085",
+      "target": "1000306185",
+      "label": "Jieshan Qiu 使用指纹 'Carbon' 5次",
+      "num": 5
+    },
+    {
+      "source": "664491",
+      "target": "1000126595",
+      "label": "Lì Lì 使用指纹 'Adsorption' 8次",
+      "num": 8
+    },
+    {
+      "source": "664491",
+      "target": "1000274611",
+      "label": "Lì Lì 使用指纹 'synthesis' 8次",
+      "num": 8
+    },
+    {
+      "source": "647027",
+      "target": "1000247899",
+      "label": "Ulrich Schubert 使用指纹 'Self-assembly' 18次",
+      "num": 18
+    },
+    {
+      "source": "647027",
+      "target": "1000274611",
+      "label": "Ulrich Schubert 使用指纹 'synthesis' 7次",
+      "num": 7
+    },
+    {
+      "source": "646308",
+      "target": "1000247899",
+      "label": "Yu Liu 使用指纹 'Self-assembly' 16次",
+      "num": 16
+    },
+    {
+      "source": "646308",
+      "target": "1000274611",
+      "label": "Yu Liu 使用指纹 'synthesis' 19次",
+      "num": 19
+    },
+    {
+      "source": "418171",
+      "target": "1000126595",
+      "label": "李静 使用指纹 'Adsorption' 5次",
+      "num": 5
+    },
+    {
+      "source": "418171",
+      "target": "1000274611",
+      "label": "李静 使用指纹 'synthesis' 7次",
+      "num": 7
+    },
+    {
+      "source": "418057",
+      "target": "1000126595",
+      "label": "Gang Liu 使用指纹 'Adsorption' 6次",
+      "num": 6
+    },
+    {
+      "source": "418057",
+      "target": "1000274611",
+      "label": "Gang Liu 使用指纹 'synthesis' 9次",
+      "num": 9
+    },
+    {
+      "source": "417962",
+      "target": "1000300677",
+      "label": "Jun Hu 使用指纹 'mesoporous materials' 5次",
+      "num": 5
+    },
+    {
+      "source": "417962",
+      "target": "1000274611",
+      "label": "Jun Hu 使用指纹 'synthesis' 5次",
+      "num": 5
+    },
+    {
+      "source": "417962",
+      "target": "1000126595",
+      "label": "Jun Hu 使用指纹 'Adsorption' 25次",
+      "num": 25
+    },
+    {
+      "source": "417962",
+      "target": "1000247899",
+      "label": "Jun Hu 使用指纹 'Self-assembly' 7次",
+      "num": 7
+    },
+    {
+      "source": "417876",
+      "target": "1000300677",
+      "label": "王玮 使用指纹 'mesoporous materials' 6次",
+      "num": 6
+    },
+    {
+      "source": "417876",
+      "target": "1000274611",
+      "label": "王玮 使用指纹 'synthesis' 15次",
+      "num": 15
+    },
+    {
+      "source": "417876",
+      "target": "1000126595",
+      "label": "王玮 使用指纹 'Adsorption' 5次",
+      "num": 5
+    },
+    {
+      "source": "417876",
+      "target": "1000247899",
+      "label": "王玮 使用指纹 'Self-assembly' 11次",
+      "num": 11
+    },
+    {
+      "source": "416786",
+      "target": "1000126595",
+      "label": "张薇 使用指纹 'Adsorption' 8次",
+      "num": 8
+    },
+    {
+      "source": "416786",
+      "target": "1000274611",
+      "label": "张薇 使用指纹 'synthesis' 10次",
+      "num": 10
+    },
+    {
+      "source": "413873",
+      "target": "1000126595",
+      "label": "徐骏 使用指纹 'Adsorption' 6次",
+      "num": 6
+    },
+    {
+      "source": "413873",
+      "target": "1000274611",
+      "label": "徐骏 使用指纹 'synthesis' 7次",
+      "num": 7
+    },
+    {
+      "source": "413816",
+      "target": "1000126595",
+      "label": "Wei Zhou 使用指纹 'Adsorption' 8次",
+      "num": 8
+    },
+    {
+      "source": "413816",
+      "target": "1000274611",
+      "label": "Wei Zhou 使用指纹 'synthesis' 5次",
+      "num": 5
+    },
+    {
+      "source": "413404",
+      "target": "1000300677",
+      "label": "Changsik Ha 使用指纹 'mesoporous materials' 15次",
+      "num": 15
+    },
+    {
+      "source": "413404",
+      "target": "1000274611",
+      "label": "Changsik Ha 使用指纹 'synthesis' 7次",
+      "num": 7
+    },
+    {
+      "source": "413404",
+      "target": "1000126595",
+      "label": "Changsik Ha 使用指纹 'Adsorption' 10次",
+      "num": 10
+    },
+    {
+      "source": "413357",
+      "target": "1000126595",
+      "label": "王鹏 使用指纹 'Adsorption' 6次",
+      "num": 6
+    },
+    {
+      "source": "413357",
+      "target": "1000274611",
+      "label": "王鹏 使用指纹 'synthesis' 17次",
+      "num": 17
+    },
+    {
+      "source": "410185",
+      "target": "1000126595",
+      "label": "Bin Wang 使用指纹 'Adsorption' 5次",
+      "num": 5
+    },
+    {
+      "source": "410185",
+      "target": "1000274611",
+      "label": "Bin Wang 使用指纹 'synthesis' 9次",
+      "num": 9
+    },
+    {
+      "source": "410174",
+      "target": "1000247899",
+      "label": "李国安 使用指纹 'Self-assembly' 5次",
+      "num": 5
+    },
+    {
+      "source": "410174",
+      "target": "1000274611",
+      "label": "李国安 使用指纹 'synthesis' 17次",
+      "num": 17
+    },
+    {
+      "source": "404781",
+      "target": "1000126595",
+      "label": "Lihua Wang 使用指纹 'Adsorption' 9次",
+      "num": 9
+    },
+    {
+      "source": "404781",
+      "target": "1000274611",
+      "label": "Lihua Wang 使用指纹 'synthesis' 12次",
+      "num": 12
+    },
+    {
+      "source": "404781",
+      "target": "1000247899",
+      "label": "Lihua Wang 使用指纹 'Self-assembly' 9次",
+      "num": 9
+    },
+    {
+      "source": "371770",
+      "target": "1000300677",
+      "label": "魏伟 使用指纹 'mesoporous materials' 6次",
+      "num": 6
+    },
+    {
+      "source": "371770",
+      "target": "1000274611",
+      "label": "魏伟 使用指纹 'synthesis' 10次",
+      "num": 10
+    },
+    {
+      "source": "371770",
+      "target": "1000126595",
+      "label": "魏伟 使用指纹 'Adsorption' 13次",
+      "num": 13
+    },
+    {
+      "source": "371770",
+      "target": "1000247899",
+      "label": "魏伟 使用指纹 'Self-assembly' 12次",
+      "num": 12
+    },
+    {
+      "source": "371770",
+      "target": "1000306185",
+      "label": "魏伟 使用指纹 'Carbon' 7次",
+      "num": 7
+    },
+    {
+      "source": "2059769",
+      "target": "1000126595",
+      "label": "Li li ZHANG 使用指纹 'Adsorption' 8次",
+      "num": 8
+    },
+    {
+      "source": "2059769",
+      "target": "1000274611",
+      "label": "Li li ZHANG 使用指纹 'synthesis' 9次",
+      "num": 9
+    },
+    {
+      "source": "2059359",
+      "target": "1000300677",
+      "label": "于吉红 使用指纹 'mesoporous materials' 5次",
+      "num": 5
+    },
+    {
+      "source": "2059359",
+      "target": "1000274611",
+      "label": "于吉红 使用指纹 'synthesis' 7次",
+      "num": 7
+    },
+    {
+      "source": "2053105",
+      "target": "1000247899",
+      "label": "jun Wang 使用指纹 'Self-assembly' 5次",
+      "num": 5
+    },
+    {
+      "source": "2053105",
+      "target": "1000274611",
+      "label": "jun Wang 使用指纹 'synthesis' 12次",
+      "num": 12
+    },
+    {
+      "source": "2051779",
+      "target": "1000126595",
+      "label": "Jing Zhang 使用指纹 'Adsorption' 5次",
+      "num": 5
+    },
+    {
+      "source": "2051779",
+      "target": "1000274611",
+      "label": "Jing Zhang 使用指纹 'synthesis' 8次",
+      "num": 8
+    },
+    {
+      "source": "2051779",
+      "target": "1000247899",
+      "label": "Jing Zhang 使用指纹 'Self-assembly' 7次",
+      "num": 7
+    },
+    {
+      "source": "2051285",
+      "target": "1000126595",
+      "label": "陈超 使用指纹 'Adsorption' 7次",
+      "num": 7
+    },
+    {
+      "source": "2051285",
+      "target": "1000274611",
+      "label": "陈超 使用指纹 'synthesis' 6次",
+      "num": 6
+    },
+    {
+      "source": "2043809",
+      "target": "1000126595",
+      "label": "王琪 使用指纹 'Adsorption' 10次",
+      "num": 10
+    },
+    {
+      "source": "2043809",
+      "target": "1000274611",
+      "label": "王琪 使用指纹 'synthesis' 6次",
+      "num": 6
+    },
+    {
+      "source": "2043809",
+      "target": "1000247899",
+      "label": "王琪 使用指纹 'Self-assembly' 10次",
+      "num": 10
+    },
+    {
+      "source": "2038302",
+      "target": "1000126595",
+      "label": "bo Wang 使用指纹 'Adsorption' 15次",
+      "num": 15
+    },
+    {
+      "source": "2038302",
+      "target": "1000274611",
+      "label": "bo Wang 使用指纹 'synthesis' 16次",
+      "num": 16
+    },
+    {
+      "source": "2038302",
+      "target": "1000247899",
+      "label": "bo Wang 使用指纹 'Self-assembly' 6次",
+      "num": 6
+    },
+    {
+      "source": "2035256",
+      "target": "1000300677",
+      "label": "Chengzhong Yu 使用指纹 'mesoporous materials' 27次",
+      "num": 27
+    },
+    {
+      "source": "2035256",
+      "target": "1000274611",
+      "label": "Chengzhong Yu 使用指纹 'synthesis' 15次",
+      "num": 15
+    },
+    {
+      "source": "2035256",
+      "target": "1000126595",
+      "label": "Chengzhong Yu 使用指纹 'Adsorption' 6次",
+      "num": 6
+    },
+    {
+      "source": "2035256",
+      "target": "1000247899",
+      "label": "Chengzhong Yu 使用指纹 'Self-assembly' 11次",
+      "num": 11
+    },
+    {
+      "source": "370740",
+      "target": "1000126595",
+      "label": "Mietek Jaroniec 使用指纹 'Adsorption' 21次",
+      "num": 21
+    },
+    {
+      "source": "370740",
+      "target": "1000274611",
+      "label": "Mietek Jaroniec 使用指纹 'synthesis' 7次",
+      "num": 7
+    },
+    {
+      "source": "2031337",
+      "target": "1000300677",
+      "label": "王爱勤 使用指纹 'mesoporous materials' 6次",
+      "num": 6
+    },
+    {
+      "source": "2031337",
+      "target": "1000274611",
+      "label": "王爱勤 使用指纹 'synthesis' 7次",
+      "num": 7
+    },
+    {
+      "source": "2031337",
+      "target": "1000126595",
+      "label": "王爱勤 使用指纹 'Adsorption' 65次",
+      "num": 65
+    },
+    {
+      "source": "2031337",
+      "target": "1000306185",
+      "label": "王爱勤 使用指纹 'Carbon' 5次",
+      "num": 5
+    },
+    {
+      "source": "366181",
+      "target": "1000126595",
+      "label": "Li Yang 使用指纹 'Adsorption' 6次",
+      "num": 6
+    },
+    {
+      "source": "366181",
+      "target": "1000274611",
+      "label": "Li Yang 使用指纹 'synthesis' 7次",
+      "num": 7
+    },
+    {
+      "source": "364992",
+      "target": "1000126595",
+      "label": "Feng Xu 使用指纹 'Adsorption' 5次",
+      "num": 5
+    },
+    {
+      "source": "364992",
+      "target": "1000274611",
+      "label": "Feng Xu 使用指纹 'synthesis' 8次",
+      "num": 8
+    },
+    {
+      "source": "364992",
+      "target": "1000247899",
+      "label": "Feng Xu 使用指纹 'Self-assembly' 10次",
+      "num": 10
+    },
+    {
+      "source": "2006498",
+      "target": "1000300677",
+      "label": "朱广山 使用指纹 'mesoporous materials' 12次",
+      "num": 12
+    },
+    {
+      "source": "2006498",
+      "target": "1000274611",
+      "label": "朱广山 使用指纹 'synthesis' 6次",
+      "num": 6
+    },
+    {
+      "source": "2006498",
+      "target": "1000126595",
+      "label": "朱广山 使用指纹 'Adsorption' 7次",
+      "num": 7
+    },
+    {
+      "source": "2001081",
+      "target": "1000247899",
+      "label": "Chaobin He 使用指纹 'Self-assembly' 7次",
+      "num": 7
+    },
+    {
+      "source": "2001081",
+      "target": "1000274611",
+      "label": "Chaobin He 使用指纹 'synthesis' 5次",
+      "num": 5
+    },
+    {
+      "source": "1983026",
+      "target": "1000300677",
+      "label": "Shilun Qiu 使用指纹 'mesoporous materials' 14次",
+      "num": 14
+    },
+    {
+      "source": "1983026",
+      "target": "1000274611",
+      "label": "Shilun Qiu 使用指纹 'synthesis' 6次",
+      "num": 6
+    },
+    {
+      "source": "1983026",
+      "target": "1000126595",
+      "label": "Shilun Qiu 使用指纹 'Adsorption' 7次",
+      "num": 7
+    },
+    {
+      "source": "339344",
+      "target": "1000126595",
+      "label": "Lü Wang 使用指纹 'Adsorption' 8次",
+      "num": 8
+    },
+    {
+      "source": "339344",
+      "target": "1000274611",
+      "label": "Lü Wang 使用指纹 'synthesis' 6次",
+      "num": 6
+    },
+    {
+      "source": "339344",
+      "target": "1000247899",
+      "label": "Lü Wang 使用指纹 'Self-assembly' 6次",
+      "num": 6
+    },
+    {
+      "source": "339333",
+      "target": "1000247899",
+      "label": "田禾 使用指纹 'Self-assembly' 6次",
+      "num": 6
+    },
+    {
+      "source": "339333",
+      "target": "1000274611",
+      "label": "田禾 使用指纹 'synthesis' 10次",
+      "num": 10
+    },
+    {
+      "source": "1972972",
+      "target": "1000247899",
+      "label": "侯红卫 使用指纹 'Self-assembly' 10次",
+      "num": 10
+    },
+    {
+      "source": "1972972",
+      "target": "1000274611",
+      "label": "侯红卫 使用指纹 'synthesis' 13次",
+      "num": 13
+    },
+    {
+      "source": "320506",
+      "target": "1000126595",
+      "label": "Qiang Wang 使用指纹 'Adsorption' 15次",
+      "num": 15
+    },
+    {
+      "source": "320506",
+      "target": "1000274611",
+      "label": "Qiang Wang 使用指纹 'synthesis' 21次",
+      "num": 21
+    },
+    {
+      "source": "312261",
+      "target": "1000247899",
+      "label": "Chao Wang 使用指纹 'Self-assembly' 8次",
+      "num": 8
+    },
+    {
+      "source": "312261",
+      "target": "1000274611",
+      "label": "Chao Wang 使用指纹 'synthesis' 10次",
+      "num": 10
+    },
+    {
+      "source": "303500",
+      "target": "1000300677",
+      "label": "Yuan Gao 使用指纹 'mesoporous materials' 5次",
+      "num": 5
+    },
+    {
+      "source": "303500",
+      "target": "1000274611",
+      "label": "Yuan Gao 使用指纹 'synthesis' 7次",
+      "num": 7
+    },
+    {
+      "source": "303500",
+      "target": "1000126595",
+      "label": "Yuan Gao 使用指纹 'Adsorption' 9次",
+      "num": 9
+    },
+    {
+      "source": "299049",
+      "target": "1000300677",
+      "label": "施剑林 使用指纹 'mesoporous materials' 36次",
+      "num": 36
+    },
+    {
+      "source": "299049",
+      "target": "1000274611",
+      "label": "施剑林 使用指纹 'synthesis' 6次",
+      "num": 6
+    },
+    {
+      "source": "299049",
+      "target": "1000306185",
+      "label": "施剑林 使用指纹 'Carbon' 6次",
+      "num": 6
+    },
+    {
+      "source": "282120",
+      "target": "1000247899",
+      "label": "黄维 使用指纹 'Self-assembly' 17次",
+      "num": 17
+    },
+    {
+      "source": "282120",
+      "target": "1000274611",
+      "label": "黄维 使用指纹 'synthesis' 10次",
+      "num": 10
+    },
+    {
+      "source": "1924415",
+      "target": "1000247899",
+      "label": "Craig Hawker 使用指纹 'Self-assembly' 7次",
+      "num": 7
+    },
+    {
+      "source": "1924415",
+      "target": "1000274611",
+      "label": "Craig Hawker 使用指纹 'synthesis' 5次",
+      "num": 5
+    },
+    {
+      "source": "279845",
+      "target": "1000126595",
+      "label": "Fei Liu 使用指纹 'Adsorption' 14次",
+      "num": 14
+    },
+    {
+      "source": "279845",
+      "target": "1000274611",
+      "label": "Fei Liu 使用指纹 'synthesis' 6次",
+      "num": 6
+    },
+    {
+      "source": "279789",
+      "target": "1000300677",
+      "label": "刘磊  使用指纹 'mesoporous materials' 5次",
+      "num": 5
+    },
+    {
+      "source": "279789",
+      "target": "1000274611",
+      "label": "刘磊  使用指纹 'synthesis' 9次",
+      "num": 9
+    },
+    {
+      "source": "279789",
+      "target": "1000247899",
+      "label": "刘磊  使用指纹 'Self-assembly' 5次",
+      "num": 5
+    },
+    {
+      "source": "267723",
+      "target": "1000300677",
+      "label": "Jíří Čejka 使用指纹 'mesoporous materials' 8次",
+      "num": 8
+    },
+    {
+      "source": "267723",
+      "target": "1000274611",
+      "label": "Jíří Čejka 使用指纹 'synthesis' 6次",
+      "num": 6
+    },
+    {
+      "source": "1918176",
+      "target": "1000300677",
+      "label": "Mika Sillanpää 使用指纹 'mesoporous materials' 6次",
+      "num": 6
+    },
+    {
+      "source": "1918176",
+      "target": "1000274611",
+      "label": "Mika Sillanpää 使用指纹 'synthesis' 6次",
+      "num": 6
+    },
+    {
+      "source": "1918176",
+      "target": "1000126595",
+      "label": "Mika Sillanpää 使用指纹 'Adsorption' 61次",
+      "num": 61
+    },
+    {
+      "source": "249990",
+      "target": "1000126595",
+      "label": "Yong Huang 使用指纹 'Adsorption' 6次",
+      "num": 6
+    },
+    {
+      "source": "249990",
+      "target": "1000274611",
+      "label": "Yong Huang 使用指纹 'synthesis' 7次",
+      "num": 7
+    },
+    {
+      "source": "247246",
+      "target": "1000126595",
+      "label": "Lei Chen 使用指纹 'Adsorption' 7次",
+      "num": 7
+    },
+    {
+      "source": "247246",
+      "target": "1000274611",
+      "label": "Lei Chen 使用指纹 'synthesis' 11次",
+      "num": 11
+    },
+    {
+      "source": "232517",
+      "target": "1000126595",
+      "label": "Yang Yü 使用指纹 'Adsorption' 9次",
+      "num": 9
+    },
+    {
+      "source": "232517",
+      "target": "1000274611",
+      "label": "Yang Yü 使用指纹 'synthesis' 8次",
+      "num": 8
+    },
+    {
+      "source": "197020",
+      "target": "1000126595",
+      "label": "Bin Xu 使用指纹 'Adsorption' 5次",
+      "num": 5
+    },
+    {
+      "source": "197020",
+      "target": "1000274611",
+      "label": "Bin Xu 使用指纹 'synthesis' 8次",
+      "num": 8
+    },
+    {
+      "source": "46964",
+      "target": "1000300677",
+      "label": "Kun Zhang 使用指纹 'mesoporous materials' 7次",
+      "num": 7
+    },
+    {
+      "source": "46964",
+      "target": "1000274611",
+      "label": "Kun Zhang 使用指纹 'synthesis' 5次",
+      "num": 5
+    },
+    {
+      "source": "1906433",
+      "target": "1000247899",
+      "label": "Mark MacLachlan 使用指纹 'Self-assembly' 5次",
+      "num": 5
+    },
+    {
+      "source": "1906433",
+      "target": "1000300677",
+      "label": "Mark MacLachlan 使用指纹 'mesoporous materials' 11次",
+      "num": 11
+    },
+    {
+      "source": "1900103",
+      "target": "1000247899",
+      "label": "David Grosso 使用指纹 'Self-assembly' 7次",
+      "num": 7
+    },
+    {
+      "source": "1900103",
+      "target": "1000300677",
+      "label": "David Grosso 使用指纹 'mesoporous materials' 6次",
+      "num": 6
+    },
+    {
+      "source": "1899910",
+      "target": "1000126595",
+      "label": "Katsuhiko Ariga 使用指纹 'Adsorption' 11次",
+      "num": 11
+    },
+    {
+      "source": "1899910",
+      "target": "1000300677",
+      "label": "Katsuhiko Ariga 使用指纹 'mesoporous materials' 36次",
+      "num": 36
+    },
+    {
+      "source": "1899910",
+      "target": "1000247899",
+      "label": "Katsuhiko Ariga 使用指纹 'Self-assembly' 33次",
+      "num": 33
+    },
+    {
+      "source": "1899910",
+      "target": "1000306185",
+      "label": "Katsuhiko Ariga 使用指纹 'Carbon' 7次",
+      "num": 7
+    },
+    {
+      "source": "1898497",
+      "target": "1000126595",
+      "label": "Serge Kaliaguine 使用指纹 'Adsorption' 5次",
+      "num": 5
+    },
+    {
+      "source": "1898497",
+      "target": "1000300677",
+      "label": "Serge Kaliaguine 使用指纹 'mesoporous materials' 6次",
+      "num": 6
+    },
+    {
+      "source": "1896395",
+      "target": "1000247899",
+      "label": "Ulrich Wiesner 使用指纹 'Self-assembly' 24次",
+      "num": 24
+    },
+    {
+      "source": "1896395",
+      "target": "1000300677",
+      "label": "Ulrich Wiesner 使用指纹 'mesoporous materials' 6次",
+      "num": 6
+    },
+    {
+      "source": "1894957",
+      "target": "1000306185",
+      "label": "Ferdi Schüth 使用指纹 'Carbon' 8次",
+      "num": 8
+    },
+    {
+      "source": "1894957",
+      "target": "1000300677",
+      "label": "Ferdi Schüth 使用指纹 'mesoporous materials' 16次",
+      "num": 16
+    },
+    {
+      "source": "1821566",
+      "target": "1000126595",
+      "label": "Stefan Kaskel 使用指纹 'Adsorption' 9次",
+      "num": 9
+    },
+    {
+      "source": "1821566",
+      "target": "1000300677",
+      "label": "Stefan Kaskel 使用指纹 'mesoporous materials' 11次",
+      "num": 11
+    },
+    {
+      "source": "1821566",
+      "target": "1000306185",
+      "label": "Stefan Kaskel 使用指纹 'Carbon' 5次",
+      "num": 5
+    },
+    {
+      "source": "1766854",
+      "target": "1000126595",
+      "label": "Ajayan Vinu 使用指纹 'Adsorption' 17次",
+      "num": 17
+    },
+    {
+      "source": "1766854",
+      "target": "1000300677",
+      "label": "Ajayan Vinu 使用指纹 'mesoporous materials' 58次",
+      "num": 58
+    },
+    {
+      "source": "1766854",
+      "target": "1000306185",
+      "label": "Ajayan Vinu 使用指纹 'Carbon' 13次",
+      "num": 13
+    },
+    {
+      "source": "1175560",
+      "target": "1000126595",
+      "label": "Paul Chu 使用指纹 'Adsorption' 8次",
+      "num": 8
+    },
+    {
+      "source": "1175560",
+      "target": "1000300677",
+      "label": "Paul Chu 使用指纹 'mesoporous materials' 6次",
+      "num": 6
+    },
+    {
+      "source": "1175560",
+      "target": "1000247899",
+      "label": "Paul Chu 使用指纹 'Self-assembly' 7次",
+      "num": 7
+    },
+    {
+      "source": "1051052",
+      "target": "1000247899",
+      "label": "窦士学 使用指纹 'Self-assembly' 7次",
+      "num": 7
+    },
+    {
+      "source": "1051052",
+      "target": "1000300677",
+      "label": "窦士学 使用指纹 'mesoporous materials' 7次",
+      "num": 7
+    },
+    {
+      "source": "1051052",
+      "target": "1000306185",
+      "label": "窦士学 使用指纹 'Carbon' 7次",
+      "num": 7
+    },
+    {
+      "source": "925614",
+      "target": "1000247899",
+      "label": "Xiaogang Qu 使用指纹 'Self-assembly' 10次",
+      "num": 10
+    },
+    {
+      "source": "925614",
+      "target": "1000300677",
+      "label": "Xiaogang Qu 使用指纹 'mesoporous materials' 8次",
+      "num": 8
+    },
+    {
+      "source": "842384",
+      "target": "1000247899",
+      "label": "Thomas Bein 使用指纹 'Self-assembly' 5次",
+      "num": 5
+    },
+    {
+      "source": "842384",
+      "target": "1000300677",
+      "label": "Thomas Bein 使用指纹 'mesoporous materials' 11次",
+      "num": 11
+    },
+    {
+      "source": "750843",
+      "target": "1000247899",
+      "label": "Jonathan Hill 使用指纹 'Self-assembly' 22次",
+      "num": 22
+    },
+    {
+      "source": "750843",
+      "target": "1000300677",
+      "label": "Jonathan Hill 使用指纹 'mesoporous materials' 8次",
+      "num": 8
+    },
+    {
+      "source": "738062",
+      "target": "1000126595",
+      "label": "Christopher Jones 使用指纹 'Adsorption' 19次",
+      "num": 19
+    },
+    {
+      "source": "738062",
+      "target": "1000300677",
+      "label": "Christopher Jones 使用指纹 'mesoporous materials' 8次",
+      "num": 8
+    },
+    {
+      "source": "2113301",
+      "target": "1000126595",
+      "label": "余家国 使用指纹 'Adsorption' 18次",
+      "num": 18
+    },
+    {
+      "source": "2113301",
+      "target": "1000300677",
+      "label": "余家国 使用指纹 'mesoporous materials' 13次",
+      "num": 13
+    },
+    {
+      "source": "2108019",
+      "target": "1000126595",
+      "label": "李和兴 使用指纹 'Adsorption' 5次",
+      "num": 5
+    },
+    {
+      "source": "2108019",
+      "target": "1000300677",
+      "label": "李和兴 使用指纹 'mesoporous materials' 18次",
+      "num": 18
+    },
+    {
+      "source": "2059658",
+      "target": "1000126595",
+      "label": "赵修松 使用指纹 'Adsorption' 11次",
+      "num": 11
+    },
+    {
+      "source": "2059658",
+      "target": "1000300677",
+      "label": "赵修松 使用指纹 'mesoporous materials' 6次",
+      "num": 6
+    },
+    {
+      "source": "2059658",
+      "target": "1000247899",
+      "label": "赵修松 使用指纹 'Self-assembly' 8次",
+      "num": 8
+    },
+    {
+      "source": "2039641",
+      "target": "1000247899",
+      "label": "Min Chen 使用指纹 'Self-assembly' 6次",
+      "num": 6
+    },
+    {
+      "source": "2039641",
+      "target": "1000300677",
+      "label": "Min Chen 使用指纹 'mesoporous materials' 5次",
+      "num": 5
+    },
+    {
+      "source": "2037784",
+      "target": "1000247899",
+      "label": "俞书宏 使用指纹 'Self-assembly' 9次",
+      "num": 9
+    },
+    {
+      "source": "2037784",
+      "target": "1000300677",
+      "label": "俞书宏 使用指纹 'mesoporous materials' 6次",
+      "num": 6
+    },
+    {
+      "source": "368756",
+      "target": "1000126595",
+      "label": " Van Tendeloo G. 使用指纹 'Adsorption' 5次",
+      "num": 5
+    },
+    {
+      "source": "368756",
+      "target": "1000300677",
+      "label": " Van Tendeloo G. 使用指纹 'mesoporous materials' 6次",
+      "num": 6
+    },
+    {
+      "source": "2024770",
+      "target": "1000247899",
+      "label": "危岩 使用指纹 'Self-assembly' 14次",
+      "num": 14
+    },
+    {
+      "source": "2024770",
+      "target": "1000300677",
+      "label": "危岩 使用指纹 'mesoporous materials' 6次",
+      "num": 6
+    },
+    {
+      "source": "2022440",
+      "target": "1000306185",
+      "label": "Arne faunce Thomas 使用指纹 'Carbon' 6次",
+      "num": 6
+    },
+    {
+      "source": "2022440",
+      "target": "1000300677",
+      "label": "Arne faunce Thomas 使用指纹 'mesoporous materials' 7次",
+      "num": 7
+    },
+    {
+      "source": "2018953",
+      "target": "1000247899",
+      "label": "逯高清 使用指纹 'Self-assembly' 8次",
+      "num": 8
+    },
+    {
+      "source": "2018953",
+      "target": "1000300677",
+      "label": "逯高清 使用指纹 'mesoporous materials' 12次",
+      "num": 12
+    },
+    {
+      "source": "2018953",
+      "target": "1000306185",
+      "label": "逯高清 使用指纹 'Carbon' 5次",
+      "num": 5
+    },
+    {
+      "source": "2015870",
+      "target": "1000247899",
+      "label": "殷亚东 使用指纹 'Self-assembly' 13次",
+      "num": 13
+    },
+    {
+      "source": "2015870",
+      "target": "1000300677",
+      "label": "殷亚东 使用指纹 'mesoporous materials' 10次",
+      "num": 10
+    },
+    {
+      "source": "2008659",
+      "target": "1000247899",
+      "label": "Kazuyuki Kuroda 使用指纹 'Self-assembly' 8次",
+      "num": 8
+    },
+    {
+      "source": "2008659",
+      "target": "1000300677",
+      "label": "Kazuyuki Kuroda 使用指纹 'mesoporous materials' 17次",
+      "num": 17
+    },
+    {
+      "source": "1988087",
+      "target": "1000126595",
+      "label": "Zhongyong Yuan 使用指纹 'Adsorption' 7次",
+      "num": 7
+    },
+    {
+      "source": "1988087",
+      "target": "1000300677",
+      "label": "Zhongyong Yuan 使用指纹 'mesoporous materials' 25次",
+      "num": 25
+    },
+    {
+      "source": "1987986",
+      "target": "1000247899",
+      "label": "曾华淳 使用指纹 'Self-assembly' 5次",
+      "num": 5
+    },
+    {
+      "source": "1987986",
+      "target": "1000300677",
+      "label": "曾华淳 使用指纹 'mesoporous materials' 5次",
+      "num": 5
+    },
+    {
+      "source": "1987626",
+      "target": "1000247899",
+      "label": "Clément Sánchez 使用指纹 'Self-assembly' 8次",
+      "num": 8
+    },
+    {
+      "source": "1987626",
+      "target": "1000300677",
+      "label": "Clément Sánchez 使用指纹 'mesoporous materials' 10次",
+      "num": 10
+    },
+    {
+      "source": "1985835",
+      "target": "1000247899",
+      "label": "戴胜 使用指纹 'Self-assembly' 5次",
+      "num": 5
+    },
+    {
+      "source": "1985835",
+      "target": "1000300677",
+      "label": "戴胜 使用指纹 'mesoporous materials' 12次",
+      "num": 12
+    },
+    {
+      "source": "1985835",
+      "target": "1000306185",
+      "label": "戴胜 使用指纹 'Carbon' 8次",
+      "num": 8
+    },
+    {
+      "source": "342751",
+      "target": "1000126595",
+      "label": "张金龙 使用指纹 'Adsorption' 5次",
+      "num": 5
+    },
+    {
+      "source": "342751",
+      "target": "1000300677",
+      "label": "张金龙 使用指纹 'mesoporous materials' 14次",
+      "num": 14
+    },
+    {
+      "source": "342751",
+      "target": "1000306185",
+      "label": "张金龙 使用指纹 'Carbon' 5次",
+      "num": 5
+    },
+    {
+      "source": "1974296",
+      "target": "1000126595",
+      "label": "Bei Cheng 使用指纹 'Adsorption' 6次",
+      "num": 6
+    },
+    {
+      "source": "1974296",
+      "target": "1000300677",
+      "label": "Bei Cheng 使用指纹 'mesoporous materials' 9次",
+      "num": 9
+    },
+    {
+      "source": "1961462",
+      "target": "1000126595",
+      "label": "肖丰收 使用指纹 'Adsorption' 6次",
+      "num": 6
+    },
+    {
+      "source": "1961462",
+      "target": "1000300677",
+      "label": "肖丰收 使用指纹 'mesoporous materials' 12次",
+      "num": 12
+    },
+    {
+      "source": "1949898",
+      "target": "1000247899",
+      "label": "Markus Antonietti 使用指纹 'Self-assembly' 6次",
+      "num": 6
+    },
+    {
+      "source": "1949898",
+      "target": "1000300677",
+      "label": "Markus Antonietti 使用指纹 'mesoporous materials' 9次",
+      "num": 9
+    },
+    {
+      "source": "1949898",
+      "target": "1000306185",
+      "label": "Markus Antonietti 使用指纹 'Carbon' 9次",
+      "num": 9
+    },
+    {
+      "source": "300334",
+      "target": "1000306185",
+      "label": "乔世璋 使用指纹 'Carbon' 5次",
+      "num": 5
+    },
+    {
+      "source": "300334",
+      "target": "1000300677",
+      "label": "乔世璋 使用指纹 'mesoporous materials' 7次",
+      "num": 7
+    },
+    {
+      "source": "28659",
+      "target": "1000247899",
+      "label": "冯新亮 使用指纹 'Self-assembly' 30次",
+      "num": 30
+    },
+    {
+      "source": "28659",
+      "target": "1000300677",
+      "label": "冯新亮 使用指纹 'mesoporous materials' 5次",
+      "num": 5
+    },
+    {
+      "source": "3621",
+      "target": "1000247899",
+      "label": "山内悠輔 使用指纹 'Self-assembly' 8次",
+      "num": 8
+    },
+    {
+      "source": "3621",
+      "target": "1000300677",
+      "label": "山内悠輔 使用指纹 'mesoporous materials' 108次",
+      "num": 108
+    },
+    {
+      "source": "3621",
+      "target": "1000306185",
+      "label": "山内悠輔 使用指纹 'Carbon' 10次",
+      "num": 10
+    },
+    {
+      "source": "1872521",
+      "target": "1000247899",
+      "label": "Christof Woell 使用指纹 'Self-assembly' 7次",
+      "num": 7
+    },
+    {
+      "source": "1872521",
+      "target": "1000126595",
+      "label": "Christof Woell 使用指纹 'Adsorption' 8次",
+      "num": 8
+    },
+    {
+      "source": "1391558",
+      "target": "1000306185",
+      "label": "康飞宇 使用指纹 'Carbon' 8次",
+      "num": 8
+    },
+    {
+      "source": "1391558",
+      "target": "1000126595",
+      "label": "康飞宇 使用指纹 'Adsorption' 10次",
+      "num": 10
+    },
+    {
+      "source": "845523",
+      "target": "1000247899",
+      "label": "孙润仓 使用指纹 'Self-assembly' 6次",
+      "num": 6
+    },
+    {
+      "source": "845523",
+      "target": "1000126595",
+      "label": "孙润仓 使用指纹 'Adsorption' 6次",
+      "num": 6
+    },
+    {
+      "source": "417822",
+      "target": "1000247899",
+      "label": "lin Li 使用指纹 'Self-assembly' 5次",
+      "num": 5
+    },
+    {
+      "source": "417822",
+      "target": "1000126595",
+      "label": "lin Li 使用指纹 'Adsorption' 8次",
+      "num": 8
+    },
+    {
+      "source": "400352",
+      "target": "1000247899",
+      "label": "Hao Wu 使用指纹 'Self-assembly' 5次",
+      "num": 5
+    },
+    {
+      "source": "400352",
+      "target": "1000126595",
+      "label": "Hao Wu 使用指纹 'Adsorption' 5次",
+      "num": 5
+    },
+    {
+      "source": "376039",
+      "target": "1000247899",
+      "label": "Möhwald H. 使用指纹 'Self-assembly' 14次",
+      "num": 14
+    },
+    {
+      "source": "376039",
+      "target": "1000126595",
+      "label": "Möhwald H. 使用指纹 'Adsorption' 7次",
+      "num": 7
+    },
+    {
+      "source": "2080179",
+      "target": "1000247899",
+      "label": "赵鑫 使用指纹 'Self-assembly' 11次",
+      "num": 11
+    },
+    {
+      "source": "2080179",
+      "target": "1000126595",
+      "label": "赵鑫 使用指纹 'Adsorption' 5次",
+      "num": 5
+    },
+    {
+      "source": "2046376",
+      "target": "1000247899",
+      "label": "刘华坤 使用指纹 'Self-assembly' 5次",
+      "num": 5
+    },
+    {
+      "source": "2046376",
+      "target": "1000126595",
+      "label": "刘华坤 使用指纹 'Adsorption' 5次",
+      "num": 5
+    },
+    {
+      "source": "2046376",
+      "target": "1000306185",
+      "label": "刘华坤 使用指纹 'Carbon' 5次",
+      "num": 5
+    },
+    {
+      "source": "2042959",
+      "target": "1000247899",
+      "label": "Hui Xu 使用指纹 'Self-assembly' 6次",
+      "num": 6
+    },
+    {
+      "source": "2042959",
+      "target": "1000126595",
+      "label": "Hui Xu 使用指纹 'Adsorption' 25次",
+      "num": 25
+    },
+    {
+      "source": "2036010",
+      "target": "1000247899",
+      "label": "张东 使用指纹 'Self-assembly' 5次",
+      "num": 5
+    },
+    {
+      "source": "2036010",
+      "target": "1000126595",
+      "label": "张东 使用指纹 'Adsorption' 25次",
+      "num": 25
+    },
+    {
+      "source": "2028923",
+      "target": "1000247899",
+      "label": "Wei Xu 使用指纹 'Self-assembly' 7次",
+      "num": 7
+    },
+    {
+      "source": "2028923",
+      "target": "1000126595",
+      "label": "Wei Xu 使用指纹 'Adsorption' 5次",
+      "num": 5
+    },
+    {
+      "source": "2017471",
+      "target": "1000306185",
+      "label": "Morinobu Endo 使用指纹 'Carbon' 10次",
+      "num": 10
+    },
+    {
+      "source": "2017471",
+      "target": "1000126595",
+      "label": "Morinobu Endo 使用指纹 'Adsorption' 5次",
+      "num": 5
+    },
+    {
+      "source": "1961158",
+      "target": "1000247899",
+      "label": "Michael kam chiu Tam 使用指纹 'Self-assembly' 7次",
+      "num": 7
+    },
+    {
+      "source": "1961158",
+      "target": "1000126595",
+      "label": "Michael kam chiu Tam 使用指纹 'Adsorption' 6次",
+      "num": 6
+    },
+    {
+      "source": "297551",
+      "target": "1000247899",
+      "label": "Wei Feng 使用指纹 'Self-assembly' 5次",
+      "num": 5
+    },
+    {
+      "source": "297551",
+      "target": "1000126595",
+      "label": "Wei Feng 使用指纹 'Adsorption' 6次",
+      "num": 6
+    },
+    {
+      "source": "279184",
+      "target": "1000247899",
+      "label": "李泓 使用指纹 'Self-assembly' 5次",
+      "num": 5
+    },
+    {
+      "source": "279184",
+      "target": "1000126595",
+      "label": "李泓 使用指纹 'Adsorption' 13次",
+      "num": 13
+    },
+    {
+      "source": "241874",
+      "target": "1000247899",
+      "label": "Meng Li 使用指纹 'Self-assembly' 5次",
+      "num": 5
+    },
+    {
+      "source": "241874",
+      "target": "1000126595",
+      "label": "Meng Li 使用指纹 'Adsorption' 7次",
+      "num": 7
+    },
+    {
+      "source": "1912768",
+      "target": "1000306185",
+      "label": "Yury Gogotsi 使用指纹 'Carbon' 8次",
+      "num": 8
+    },
+    {
+      "source": "1912768",
+      "target": "1000126595",
+      "label": "Yury Gogotsi 使用指纹 'Adsorption' 6次",
+      "num": 6
+    },
+    {
+      "source": "66587",
+      "target": "1000247899",
+      "label": "Kimoon Kim 使用指纹 'Self-assembly' 7次",
+      "num": 7
+    },
+    {
+      "source": "66587",
+      "target": "1000126595",
+      "label": "Kimoon Kim 使用指纹 'Adsorption' 5次",
+      "num": 5
+    },
+    {
+      "source": "413734",
+      "target": "1000306185",
+      "label": "Kläus Müllen 使用指纹 'Carbon' 7次",
+      "num": 7
+    },
+    {
+      "source": "413734",
+      "target": "1000247899",
+      "label": "Kläus Müllen 使用指纹 'Self-assembly' 62次",
+      "num": 62
+    },
+    {
+      "source": "1962095",
+      "target": "1000306185",
+      "label": "Andreas Hirsch 使用指纹 'Carbon' 6次",
+      "num": 6
+    },
+    {
+      "source": "1962095",
+      "target": "1000247899",
+      "label": "Andreas Hirsch 使用指纹 'Self-assembly' 14次",
+      "num": 14
+    },
+    {
+      "source": "1000283315",
+      "target": "932824",
+      "label": "Ray leslie Frost 使用指纹 'Raman spectrometry' 297次",
+      "num": 297
+    },
+    {
+      "source": "1000277472",
+      "target": "932824",
+      "label": "Ray leslie Frost 使用指纹 'infrared spectroscopy' 133次",
+      "num": 133
+    },
+    {
+      "source": "1000445667",
+      "target": "1972972",
+      "label": "侯红卫 使用指纹 'crystal structure' 108次",
+      "num": 108
+    },
+    {
+      "source": "1000503939",
+      "target": "1972972",
+      "label": "侯红卫 使用指纹 'Magnetic properties' 20次",
+      "num": 20
+    },
+    {
+      "source": "1000374346",
+      "target": "3621",
+      "label": "山内悠輔 使用指纹 'platinum' 27次",
+      "num": 27
+    },
+    {
+      "source": "1000522004",
+      "target": "2046376",
+      "label": "刘华坤 使用指纹 'lithium ion battery' 100次",
+      "num": 100
+    },
+    {
+      "source": "1000411868",
+      "target": "845523",
+      "label": "孙润仓 使用指纹 'Lignins' 86次",
+      "num": 86
+    },
+    {
+      "source": "1000129292",
+      "target": "845523",
+      "label": "孙润仓 使用指纹 'Cellulose' 80次",
+      "num": 80
+    },
+    {
+      "source": "1000461990",
+      "target": "418057",
+      "label": "Gang Liu 使用指纹 'DIARYLETHYLENE' 76次",
+      "num": 76
+    },
+    {
+      "source": "1000247196",
+      "target": "418057",
+      "label": "Gang Liu 使用指纹 'Photochromism' 76次",
+      "num": 76
+    },
+    {
+      "source": "1000445667",
+      "target": "366181",
+      "label": "Li Yang 使用指纹 'crystal structure' 75次",
+      "num": 75
+    },
+    {
+      "source": "1000147986",
+      "target": "366181",
+      "label": "Li Yang 使用指纹 'Apoptosis' 45次",
+      "num": 45
+    },
+    {
+      "source": "1000504075",
+      "target": "320506",
+      "label": "Qiang Wang 使用指纹 'Microstructure' 63次",
+      "num": 63
+    },
+    {
+      "source": "1000288041",
+      "target": "320506",
+      "label": "Qiang Wang 使用指纹 'numerical simulation' 59次",
+      "num": 59
+    },
+    {
+      "source": "1000522004",
+      "target": "1417633",
+      "label": "Li Wang 使用指纹 'lithium ion battery' 63次",
+      "num": 63
+    },
+    {
+      "source": "1000242233",
+      "target": "1175560",
+      "label": "Paul Chu 使用指纹 'Plasma immersion ion implantation' 62次",
+      "num": 62
+    },
+    {
+      "source": "1000299847",
+      "target": "413734",
+      "label": "Kläus Müllen 使用指纹 'graphene' 51次",
+      "num": 51
+    },
+    {
+      "source": "1000246717",
+      "target": "413734",
+      "label": "Kläus Müllen 使用指纹 'Nanoparticles' 21次",
+      "num": 21
+    },
+    {
+      "source": "1000299847",
+      "target": "28659",
+      "label": "冯新亮 使用指纹 'graphene' 62次",
+      "num": 62
+    },
+    {
+      "source": "1000440657",
+      "target": "28659",
+      "label": "冯新亮 使用指纹 'Supercapacitors' 15次",
+      "num": 15
+    },
+    {
+      "source": "1000245103",
+      "target": "2039641",
+      "label": "Min Chen 使用指纹 'Ferroelectric materials' 61次",
+      "num": 61
+    },
+    {
+      "source": "1000435917",
+      "target": "2039641",
+      "label": "Min Chen 使用指纹 'Bismuth titanate' 39次",
+      "num": 39
+    },
+    {
+      "source": "1000450465",
+      "target": "1918176",
+      "label": "Mika Sillanpää 使用指纹 'water treatment' 47次",
+      "num": 47
+    },
+    {
+      "source": "1000246717",
+      "target": "1766854",
+      "label": "Ajayan Vinu 使用指纹 'Nanoparticles' 16次",
+      "num": 16
+    },
+    {
+      "source": "1000439165",
+      "target": "2113301",
+      "label": "余家国 使用指纹 'Photocatalysts' 55次",
+      "num": 55
+    },
+    {
+      "source": "1000275254",
+      "target": "2113301",
+      "label": "余家国 使用指纹 'titanium oxides' 24次",
+      "num": 24
+    },
+    {
+      "source": "1000283315",
+      "target": "267723",
+      "label": "Jíří Čejka 使用指纹 'Raman spectrometry' 54次",
+      "num": 54
+    },
+    {
+      "source": "1000148461",
+      "target": "267723",
+      "label": "Jíří Čejka 使用指纹 'Zeolites' 34次",
+      "num": 34
+    },
+    {
+      "source": "1000439165",
+      "target": "342751",
+      "label": "张金龙 使用指纹 'Photocatalysts' 51次",
+      "num": 51
+    },
+    {
+      "source": "1000469563",
+      "target": "997054",
+      "label": "Peng Li 使用指纹 'MICRO-GRID' 50次",
+      "num": 50
+    },
+    {
+      "source": "1000299291",
+      "target": "997054",
+      "label": "Peng Li 使用指纹 'distributed power generation' 22次",
+      "num": 22
+    },
+    {
+      "source": "1000411868",
+      "target": "364992",
+      "label": "Feng Xu 使用指纹 'Lignins' 50次",
+      "num": 50
+    },
+    {
+      "source": "1000504075",
+      "target": "2038302",
+      "label": "bo Wang 使用指纹 'Microstructure' 47次",
+      "num": 47
+    },
+    {
+      "source": "1000146668",
+      "target": "1078794",
+      "label": "Bo ,li 使用指纹 'Liver Transplantation' 45次",
+      "num": 45
+    },
+    {
+      "source": "1000522004",
+      "target": "1391558",
+      "label": "康飞宇 使用指纹 'lithium ion battery' 43次",
+      "num": 43
+    },
+    {
+      "source": "1000440657",
+      "target": "1391558",
+      "label": "康飞宇 使用指纹 'Supercapacitors' 35次",
+      "num": 35
+    },
+    {
+      "source": "1000246005",
+      "target": "1985835",
+      "label": "戴胜 使用指纹 'Ionic liquids' 43次",
+      "num": 43
+    },
+    {
+      "source": "1000449371",
+      "target": "1777195",
+      "label": "Abdullah Asiri 使用指纹 'sensitivity' 40次",
+      "num": 40
+    },
+    {
+      "source": "1000476144",
+      "target": "1777195",
+      "label": "Abdullah Asiri 使用指纹 'Optical properties' 32次",
+      "num": 32
+    },
+    {
+      "source": "1000130683",
+      "target": "646308",
+      "label": "Yu Liu 使用指纹 'Cyclodextrins' 39次",
+      "num": 39
+    },
+    {
+      "source": "1000285116",
+      "target": "646308",
+      "label": "Yu Liu 使用指纹 'supramolecular chemistry' 25次",
+      "num": 25
+    },
+    {
+      "source": "1000155126",
+      "target": "1962095",
+      "label": "Andreas Hirsch 使用指纹 'Fullerenes' 38次",
+      "num": 38
+    },
+    {
+      "source": "1000156944",
+      "target": "1962095",
+      "label": "Andreas Hirsch 使用指纹 'Dendrimers' 20次",
+      "num": 20
+    },
+    {
+      "source": "1000241292",
+      "target": "1051052",
+      "label": "窦士学 使用指纹 'Critical current density' 37次",
+      "num": 37
+    },
+    {
+      "source": "1000147986",
+      "target": "1199484",
+      "label": "Feng Li 使用指纹 'Apoptosis' 37次",
+      "num": 37
+    },
+    {
+      "source": "1000445667",
+      "target": "990606",
+      "label": "Li Xu 使用指纹 'crystal structure' 36次",
+      "num": 36
+    },
+    {
+      "source": "1000139742",
+      "target": "990606",
+      "label": "Li Xu 使用指纹 'Periodontosis' 12次",
+      "num": 12
+    },
+    {
+      "source": "1000147195",
+      "target": "299049",
+      "label": "施剑林 使用指纹 'Drug Delivery Systems' 31次",
+      "num": 31
+    },
+    {
+      "source": "1000135542",
+      "target": "2051285",
+      "label": "陈超 使用指纹 'Newborn Infant' 35次",
+      "num": 35
+    },
+    {
+      "source": "1000454530",
+      "target": "2051285",
+      "label": "陈超 使用指纹 'simulating' 17次",
+      "num": 17
+    },
+    {
+      "source": "1000445667",
+      "target": "410174",
+      "label": "李国安 使用指纹 'crystal structure' 34次",
+      "num": 34
+    },
+    {
+      "source": "1000147986",
+      "target": "410174",
+      "label": "李国安 使用指纹 'Apoptosis' 16次",
+      "num": 16
+    },
+    {
+      "source": "1000155127",
+      "target": "2017471",
+      "label": "Morinobu Endo 使用指纹 'Carbon Nanotubes' 34次",
+      "num": 34
+    },
+    {
+      "source": "1000477257",
+      "target": "2017471",
+      "label": "Morinobu Endo 使用指纹 'Composites' 13次",
+      "num": 13
+    },
+    {
+      "source": "1000522004",
+      "target": "279184",
+      "label": "李泓 使用指纹 'lithium ion battery' 34次",
+      "num": 34
+    },
+    {
+      "source": "1000147986",
+      "target": "279184",
+      "label": "李泓 使用指纹 'Apoptosis' 32次",
+      "num": 32
+    },
+    {
+      "source": "1000147986",
+      "target": "232517",
+      "label": "Yang Yü 使用指纹 'Apoptosis' 34次",
+      "num": 34
+    },
+    {
+      "source": "1000288041",
+      "target": "232517",
+      "label": "Yang Yü 使用指纹 'numerical simulation' 25次",
+      "num": 25
+    },
+    {
+      "source": "1000479729",
+      "target": "339344",
+      "label": "Lü Wang 使用指纹 'Mechanical properties' 33次",
+      "num": 33
+    },
+    {
+      "source": "1000288041",
+      "target": "416786",
+      "label": "张薇 使用指纹 'numerical simulation' 32次",
+      "num": 32
+    },
+    {
+      "source": "1000147986",
+      "target": "416786",
+      "label": "张薇 使用指纹 'Apoptosis' 27次",
+      "num": 27
+    },
+    {
+      "source": "1000147986",
+      "target": "874075",
+      "label": "Ling Wang 使用指纹 'Apoptosis' 32次",
+      "num": 32
+    },
+    {
+      "source": "1000133286",
+      "target": "859422",
+      "label": "唐本忠 使用指纹 'Fluorescence' 31次",
+      "num": 31
+    },
+    {
+      "source": "1000471673",
+      "target": "859422",
+      "label": "唐本忠 使用指纹 'SILOLE' 28次",
+      "num": 28
+    },
+    {
+      "source": "1000504422",
+      "target": "282120",
+      "label": "黄维 使用指纹 'Organic light emitting diodes' 31次",
+      "num": 31
+    },
+    {
+      "source": "1000510235",
+      "target": "282120",
+      "label": "黄维 使用指纹 'polyfluorenones' 23次",
+      "num": 23
+    },
+    {
+      "source": "1000502398",
+      "target": "1949898",
+      "label": "Markus Antonietti 使用指纹 'Carbon nitride' 31次",
+      "num": 31
+    },
+    {
+      "source": "1000126858",
+      "target": "279845",
+      "label": "Fei Liu 使用指纹 'Alzheimer Disease' 29次",
+      "num": 29
+    },
+    {
+      "source": "1000432446",
+      "target": "279845",
+      "label": "Fei Liu 使用指纹 'Tau' 19次",
+      "num": 19
+    },
+    {
+      "source": "1000271963",
+      "target": "863786",
+      "label": "Haibo Li 使用指纹 'rock mechanics' 29次",
+      "num": 29
+    },
+    {
+      "source": "1000503939",
+      "target": "863786",
+      "label": "Haibo Li 使用指纹 'Magnetic properties' 25次",
+      "num": 25
+    },
+    {
+      "source": "1000147986",
+      "target": "279789",
+      "label": "刘磊  使用指纹 'Apoptosis' 29次",
+      "num": 29
+    },
+    {
+      "source": "1000148461",
+      "target": "2059359",
+      "label": "于吉红 使用指纹 'Zeolites' 29次",
+      "num": 29
+    },
+    {
+      "source": "1000327902",
+      "target": "2059359",
+      "label": "于吉红 使用指纹 'aluminium phosphate' 23次",
+      "num": 23
+    },
+    {
+      "source": "1000288041",
+      "target": "249990",
+      "label": "Yong Huang 使用指纹 'numerical simulation' 28次",
+      "num": 28
+    },
+    {
+      "source": "1000154906",
+      "target": "249990",
+      "label": "Yong Huang 使用指纹 'MicroRNAs' 26次",
+      "num": 26
+    },
+    {
+      "source": "1000147986",
+      "target": "664491",
+      "label": "Lì Lì 使用指纹 'Apoptosis' 28次",
+      "num": 28
+    },
+    {
+      "source": "1000479729",
+      "target": "664491",
+      "label": "Lì Lì 使用指纹 'Mechanical properties' 25次",
+      "num": 25
+    },
+    {
+      "source": "1000504075",
+      "target": "410185",
+      "label": "Bin Wang 使用指纹 'Microstructure' 27次",
+      "num": 27
+    },
+    {
+      "source": "1000479729",
+      "target": "410185",
+      "label": "Bin Wang 使用指纹 'Mechanical properties' 27次",
+      "num": 27
+    },
+    {
+      "source": "1000493906",
+      "target": "1132813",
+      "label": "孙剑 使用指纹 'solar cells' 27次",
+      "num": 27
+    },
+    {
+      "source": "1000450704",
+      "target": "1132813",
+      "label": "孙剑 使用指纹 'zinc oxides' 17次",
+      "num": 17
+    },
+    {
+      "source": "1000505597",
+      "target": "368756",
+      "label": " Van Tendeloo G. 使用指纹 'Transmission electron microscopy' 27次",
+      "num": 27
+    },
+    {
+      "source": "1000159398",
+      "target": "368756",
+      "label": " Van Tendeloo G. 使用指纹 'Electron Microscope Tomography' 19次",
+      "num": 19
+    },
+    {
+      "source": "1000503939",
+      "target": "2042959",
+      "label": "Hui Xu 使用指纹 'Magnetic properties' 26次",
+      "num": 26
+    },
+    {
+      "source": "1000470171",
+      "target": "2042959",
+      "label": "Hui Xu 使用指纹 'PHOTOCATALYTIC' 26次",
+      "num": 26
+    },
+    {
+      "source": "1000477257",
+      "target": "2059769",
+      "label": "Li li ZHANG 使用指纹 'Composites' 26次",
+      "num": 26
+    },
+    {
+      "source": "1000156596",
+      "target": "2059769",
+      "label": "Li li ZHANG 使用指纹 'Chitosan' 24次",
+      "num": 24
+    },
+    {
+      "source": "1000440657",
+      "target": "1912768",
+      "label": "Yury Gogotsi 使用指纹 'Supercapacitors' 26次",
+      "num": 26
+    },
+    {
+      "source": "1000289566",
+      "target": "1912768",
+      "label": "Yury Gogotsi 使用指纹 'energy storage' 14次",
+      "num": 14
+    },
+    {
+      "source": "1000496548",
+      "target": "247246",
+      "label": "Lei Chen 使用指纹 'measurement' 25次",
+      "num": 25
+    },
+    {
+      "source": "1000273808",
+      "target": "247246",
+      "label": "Lei Chen 使用指纹 'sorption' 22次",
+      "num": 22
+    },
+    {
+      "source": "1000467471",
+      "target": "66587",
+      "label": "Kimoon Kim 使用指纹 'CUCURBITURIL' 25次",
+      "num": 25
+    },
+    {
+      "source": "1000285116",
+      "target": "66587",
+      "label": "Kimoon Kim 使用指纹 'supramolecular chemistry' 15次",
+      "num": 15
+    },
+    {
+      "source": "1000475770",
+      "target": "2053105",
+      "label": "jun Wang 使用指纹 'Diesel engines' 25次",
+      "num": 25
+    },
+    {
+      "source": "1000504075",
+      "target": "2053105",
+      "label": "jun Wang 使用指纹 'Microstructure' 22次",
+      "num": 22
+    },
+    {
+      "source": "1000131668",
+      "target": "925614",
+      "label": "Xiaogang Qu 使用指纹 'DNA' 25次",
+      "num": 25
+    },
+    {
+      "source": "1000299847",
+      "target": "925614",
+      "label": "Xiaogang Qu 使用指纹 'graphene' 24次",
+      "num": 24
+    },
+    {
+      "source": "1000522004",
+      "target": "2036010",
+      "label": "张东 使用指纹 'lithium ion battery' 20次",
+      "num": 20
+    },
+    {
+      "source": "1000299847",
+      "target": "2036010",
+      "label": "张东 使用指纹 'graphene' 15次",
+      "num": 15
+    },
+    {
+      "source": "1000440657",
+      "target": "751085",
+      "label": "Jieshan Qiu 使用指纹 'Supercapacitors' 24次",
+      "num": 24
+    },
+    {
+      "source": "1000444997",
+      "target": "1896395",
+      "label": "Ulrich Wiesner 使用指纹 'block copolymers' 10次",
+      "num": 10
+    },
+    {
+      "source": "1000133286",
+      "target": "339333",
+      "label": "田禾 使用指纹 'Fluorescence' 24次",
+      "num": 24
+    },
+    {
+      "source": "1000493906",
+      "target": "339333",
+      "label": "田禾 使用指纹 'solar cells' 14次",
+      "num": 14
+    },
+    {
+      "source": "1000246717",
+      "target": "376039",
+      "label": "Möhwald H. 使用指纹 'Nanoparticles' 24次",
+      "num": 24
+    },
+    {
+      "source": "1000247366",
+      "target": "376039",
+      "label": "Möhwald H. 使用指纹 'Polyelectrolytes' 19次",
+      "num": 19
+    },
+    {
+      "source": "1000147986",
+      "target": "2080179",
+      "label": "赵鑫 使用指纹 'Apoptosis' 23次",
+      "num": 23
+    },
+    {
+      "source": "1000146862",
+      "target": "2080179",
+      "label": "赵鑫 使用指纹 'Cytokines' 20次",
+      "num": 20
+    },
+    {
+      "source": "1000300136",
+      "target": "647027",
+      "label": "Ulrich Schubert 使用指纹 'ink jet printing' 23次",
+      "num": 23
+    },
+    {
+      "source": "1000472063",
+      "target": "647027",
+      "label": "Ulrich Schubert 使用指纹 'TERPYRIDINE' 22次",
+      "num": 22
+    },
+    {
+      "source": "1000126858",
+      "target": "417822",
+      "label": "lin Li 使用指纹 'Alzheimer Disease' 23次",
+      "num": 23
+    },
+    {
+      "source": "1000445667",
+      "target": "417822",
+      "label": "lin Li 使用指纹 'crystal structure' 11次",
+      "num": 11
+    },
+    {
+      "source": "1000356523",
+      "target": "750843",
+      "label": "Jonathan Hill 使用指纹 'interface' 15次",
+      "num": 15
+    },
+    {
+      "source": "1000156764",
+      "target": "750843",
+      "label": "Jonathan Hill 使用指纹 'Nanostructure' 12次",
+      "num": 12
+    },
+    {
+      "source": "1000148461",
+      "target": "1961462",
+      "label": "肖丰收 使用指纹 'Zeolites' 21次",
+      "num": 21
+    },
+    {
+      "source": "1000502419",
+      "target": "1961462",
+      "label": "肖丰收 使用指纹 'Heterogeneous catalysis' 16次",
+      "num": 16
+    },
+    {
+      "source": "1000247373",
+      "target": "413404",
+      "label": "Changsik Ha 使用指纹 'Polyimides' 21次",
+      "num": 21
+    },
+    {
+      "source": "1000147986",
+      "target": "418171",
+      "label": "李静 使用指纹 'Apoptosis' 21次",
+      "num": 21
+    },
+    {
+      "source": "1000530619",
+      "target": "418171",
+      "label": "李静 使用指纹 'Engineering vehicle' 17次",
+      "num": 17
+    },
+    {
+      "source": "1000004999",
+      "target": "197020",
+      "label": "Bin Xu 使用指纹 'Neural network' 21次",
+      "num": 21
+    },
+    {
+      "source": "1000504075",
+      "target": "197020",
+      "label": "Bin Xu 使用指纹 'Microstructure' 19次",
+      "num": 19
+    },
+    {
+      "source": "1000274062",
+      "target": "413873",
+      "label": "徐骏 使用指纹 'stable isotopes' 19次",
+      "num": 19
+    },
+    {
+      "source": "1000445667",
+      "target": "413873",
+      "label": "徐骏 使用指纹 'crystal structure' 18次",
+      "num": 18
+    },
+    {
+      "source": "1000279202",
+      "target": "738062",
+      "label": "Christopher Jones 使用指纹 'membrane' 10次",
+      "num": 10
+    },
+    {
+      "source": "1000012834",
+      "target": "738062",
+      "label": "Christopher Jones 使用指纹 'Hollow Fiber' 10次",
+      "num": 10
+    },
+    {
+      "source": "1000135040",
+      "target": "2108019",
+      "label": "李和兴 使用指纹 'Hydrogenation' 19次",
+      "num": 19
+    },
+    {
+      "source": "1000439165",
+      "target": "2108019",
+      "label": "李和兴 使用指纹 'Photocatalysts' 14次",
+      "num": 14
+    },
+    {
+      "source": "1000147986",
+      "target": "846589",
+      "label": "Chen Chen 使用指纹 'Apoptosis' 18次",
+      "num": 18
+    },
+    {
+      "source": "1000242280",
+      "target": "846589",
+      "label": "Chen Chen 使用指纹 'Power quality' 13次",
+      "num": 13
+    },
+    {
+      "source": "1000485674",
+      "target": "2043809",
+      "label": "王琪 使用指纹 'Nanocomposites' 18次",
+      "num": 18
+    },
+    {
+      "source": "1000479729",
+      "target": "958442",
+      "label": "Liping Wang 使用指纹 'Mechanical properties' 18次",
+      "num": 18
+    },
+    {
+      "source": "1000504075",
+      "target": "958442",
+      "label": "Liping Wang 使用指纹 'Microstructure' 16次",
+      "num": 16
+    },
+    {
+      "source": "1000139264",
+      "target": "1444648",
+      "label": "苏宝连 使用指纹 'Palladium' 12次",
+      "num": 12
+    },
+    {
+      "source": "1000140079",
+      "target": "1444648",
+      "label": "苏宝连 使用指纹 'Photosynthesis' 10次",
+      "num": 10
+    },
+    {
+      "source": "1000502419",
+      "target": "2022440",
+      "label": "Arne faunce Thomas 使用指纹 'Heterogeneous catalysis' 17次",
+      "num": 17
+    },
+    {
+      "source": "1000502398",
+      "target": "2022440",
+      "label": "Arne faunce Thomas 使用指纹 'Carbon nitride' 12次",
+      "num": 12
+    },
+    {
+      "source": "1000606324",
+      "target": "413357",
+      "label": "王鹏 使用指纹 'MICROWAVE' 16次",
+      "num": 16
+    },
+    {
+      "source": "1000439165",
+      "target": "413357",
+      "label": "王鹏 使用指纹 'Photocatalysts' 16次",
+      "num": 16
+    },
+    {
+      "source": "1000502419",
+      "target": "1894957",
+      "label": "Ferdi Schüth 使用指纹 'Heterogeneous catalysis' 13次",
+      "num": 13
+    },
+    {
+      "source": "1000246717",
+      "target": "1894957",
+      "label": "Ferdi Schüth 使用指纹 'Nanoparticles' 12次",
+      "num": 12
+    },
+    {
+      "source": "1000155127",
+      "target": "297551",
+      "label": "Wei Feng 使用指纹 'Carbon Nanotubes' 16次",
+      "num": 16
+    },
+    {
+      "source": "1000430753",
+      "target": "297551",
+      "label": "Wei Feng 使用指纹 'stabilization' 12次",
+      "num": 12
+    },
+    {
+      "source": "1000504075",
+      "target": "312261",
+      "label": "Chao Wang 使用指纹 'Microstructure' 16次",
+      "num": 16
+    },
+    {
+      "source": "1000503939",
+      "target": "312261",
+      "label": "Chao Wang 使用指纹 'Magnetic properties' 15次",
+      "num": 15
+    },
+    {
+      "source": "1000485674",
+      "target": "2001081",
+      "label": "Chaobin He 使用指纹 'Nanocomposites' 16次",
+      "num": 16
+    },
+    {
+      "source": "1000504075",
+      "target": "46964",
+      "label": "Kun Zhang 使用指纹 'Microstructure' 15次",
+      "num": 15
+    },
+    {
+      "source": "1000147986",
+      "target": "46964",
+      "label": "Kun Zhang 使用指纹 'Apoptosis' 11次",
+      "num": 11
+    },
+    {
+      "source": "1000134819",
+      "target": "400352",
+      "label": "Hao Wu 使用指纹 'HIV' 15次",
+      "num": 15
+    },
+    {
+      "source": "1000146103",
+      "target": "400352",
+      "label": "Hao Wu 使用指纹 'HIV-1' 14次",
+      "num": 14
+    },
+    {
+      "source": "1000246717",
+      "target": "842384",
+      "label": "Thomas Bein 使用指纹 'Nanoparticles' 15次",
+      "num": 15
+    },
+    {
+      "source": "1000302306",
+      "target": "1872521",
+      "label": "Christof Woell 使用指纹 'surface chemistry' 15次",
+      "num": 15
+    },
+    {
+      "source": "1000302479",
+      "target": "1872521",
+      "label": "Christof Woell 使用指纹 'thin films' 13次",
+      "num": 13
+    },
+    {
+      "source": "1000156764",
+      "target": "2015870",
+      "label": "殷亚东 使用指纹 'Nanostructure' 15次",
+      "num": 15
+    },
+    {
+      "source": "1000439165",
+      "target": "2015870",
+      "label": "殷亚东 使用指纹 'Photocatalysts' 13次",
+      "num": 13
+    },
+    {
+      "source": "1000445667",
+      "target": "2028923",
+      "label": "Wei Xu 使用指纹 'crystal structure' 15次",
+      "num": 15
+    },
+    {
+      "source": "1000503939",
+      "target": "2028923",
+      "label": "Wei Xu 使用指纹 'Magnetic properties' 13次",
+      "num": 13
+    },
+    {
+      "source": "1000246717",
+      "target": "1987626",
+      "label": "Clément Sánchez 使用指纹 'Nanoparticles' 15次",
+      "num": 15
+    },
+    {
+      "source": "1000247356",
+      "target": "2024770",
+      "label": "危岩 使用指纹 'Polyanilines' 15次",
+      "num": 15
+    },
+    {
+      "source": "1000503130",
+      "target": "2024770",
+      "label": "危岩 使用指纹 'Electrospinning' 13次",
+      "num": 13
+    },
+    {
+      "source": "1000147986",
+      "target": "303500",
+      "label": "Yuan Gao 使用指纹 'Apoptosis' 14次",
+      "num": 14
+    },
+    {
+      "source": "1000186164",
+      "target": "1898497",
+      "label": "Serge Kaliaguine 使用指纹 'perovskite' 14次",
+      "num": 14
+    },
+    {
+      "source": "1000156764",
+      "target": "2037784",
+      "label": "俞书宏 使用指纹 'Nanostructure' 14次",
+      "num": 14
+    },
+    {
+      "source": "1000485674",
+      "target": "2037784",
+      "label": "俞书宏 使用指纹 'Nanocomposites' 10次",
+      "num": 10
+    },
+    {
+      "source": "1000160677",
+      "target": "1924415",
+      "label": "Craig Hawker 使用指纹 'Click Chemistry' 14次",
+      "num": 14
+    },
+    {
+      "source": "1000444997",
+      "target": "1924415",
+      "label": "Craig Hawker 使用指纹 'block copolymers' 10次",
+      "num": 10
+    },
+    {
+      "source": "1000504067",
+      "target": "1983026",
+      "label": "Shilun Qiu 使用指纹 'Microporous materials' 12次",
+      "num": 12
+    },
+    {
+      "source": "1000439165",
+      "target": "2018953",
+      "label": "逯高清 使用指纹 'Photocatalysts' 13次",
+      "num": 13
+    },
+    {
+      "source": "1000156764",
+      "target": "300334",
+      "label": "乔世璋 使用指纹 'Nanostructure' 13次",
+      "num": 13
+    },
+    {
+      "source": "1000270857",
+      "target": "241874",
+      "label": "Meng Li 使用指纹 'polymorphism' 12次",
+      "num": 12
+    },
+    {
+      "source": "1000288041",
+      "target": "241874",
+      "label": "Meng Li 使用指纹 'numerical simulation' 11次",
+      "num": 11
+    },
+    {
+      "source": "1000133286",
+      "target": "404781",
+      "label": "Lihua Wang 使用指纹 'Fluorescence' 12次",
+      "num": 12
+    },
+    {
+      "source": "1000440657",
+      "target": "2059658",
+      "label": "赵修松 使用指纹 'Supercapacitors' 12次",
+      "num": 12
+    },
+    {
+      "source": "1000445667",
+      "target": "2006498",
+      "label": "朱广山 使用指纹 'crystal structure' 11次",
+      "num": 11
+    },
+    {
+      "source": "1000447535",
+      "target": "1821566",
+      "label": "Stefan Kaskel 使用指纹 'lithium sulfur batteries' 10次",
+      "num": 10
+    },
+    {
+      "source": "1000504075",
+      "target": "413816",
+      "label": "Wei Zhou 使用指纹 'Microstructure' 11次",
+      "num": 11
+    }
+  ]
+                } ]
+            };
+			
+				var linkList= option.series[0].links;
+				for(var i in linkList){
+					let linkObj = linkList[i];
+					linkObj.itemStyle={normal:{
+						lineWidth:linkObj.num/20,
+						text:linkObj.num,
+						color:'#cccccc',
+						brushType: 'stroke',
+						//shadowColor: '#cccccc',
+						textPosition: 'inside',
+						textFont: 'normal 16px 宋体',
+						strokeColor: '#cccccc'
+						}};
+					}
+					
+				
+					
+				myChart.setOption(option);
+			function contains(arrays, obj) {
+				var i = arrays.length;
+				while (i--) {
+					if (arrays[i].name == obj) {
+						return i;
+					}
+				}
+				return -1;
+				}
+				
+             var ecConfig = require('echarts/config');
+            function openOrFold(param) {
+                var option = myChart.getOption();
+                var nodesOption = option.series[0].nodes;
+                var linksOption = option.series[0].links;
+                var data = param.data;
+                var linksNodes = [];
+
+                var categoryLength = option.series[0].categories.length;
+
+                if (data.category == (categoryLength - 1)) {
+                   // alert(data.label);
+				   return;
+                }
+
+                if (data != null && data != undefined) {
+                    if (data.flag) {
+
+                        for ( var m in linksOption) {
+
+                            if (linksOption[m].target == data.id) {
+                                linksNodes.push(linksOption[m].source);
+                            }
+                        }
+                        if (linksNodes != null && linksNodes != undefined) {
+                            for ( var p in linksNodes) {
+								let index = contains(nodesOption,linksNodes[p]);
+                                nodesOption[index].ignore = false;
+                                nodesOption[index].flag = true;
+                            }
+                        }
+						
+                        nodesOption[contains(nodesOption,data.id)].flag = false;
+                        myChart.setOption(option);
+                    } else {
+
+                        
+						
+						for ( var m in linksOption) {
+						
+                            if (linksOption[m].target == data.id) {
+                                linksNodes.push(linksOption[m].source);
+                            }
+                            if (linksNodes != null && linksNodes != undefined) {
+								
+                                for ( var n in linksNodes) {
+                                    if (linksOption[m].target == linksNodes[n]) {
+                                        linksNodes.push(linksOption[m].source);
+                                    }
+                                }
+								
+                            }
+                        }
+						
+                        if (linksNodes != null && linksNodes != undefined) {
+                            for ( var p in linksNodes) {
+								let index = contains(nodesOption,linksNodes[p]);
+                                nodesOption[index].ignore = true;
+                                nodesOption[index].flag = true;
+                            }
+                        }
+                        nodesOption[contains(nodesOption,data.id)].flag = true;
+                        myChart.setOption(option);
+                    }
+                }
+            }
+            myChart.on(ecConfig.EVENT.CLICK, openOrFold);
+        });
+    </script>
+
+</body>
+</html>

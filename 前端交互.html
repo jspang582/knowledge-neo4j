@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test</title>
+</head>
+<body>
+    <div id="main" style="width: 850px; height: 500px"></div>
+    <div id="ss" ></div>
+    <script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
+    <script type="text/javascript">
+
+        require.config({
+            paths : {
+                echarts : 'http://echarts.baidu.com/build/dist'
+            }
+        });
+        require([ "echarts", "echarts/chart/force"], function(ec) {
+            var myChart = ec.init(document.getElementById('main'), 'macarons');
+            var option = {
+                tooltip : {
+                    show : true
+                },
+                series : [ {
+                    type : 'force',
+                    name : "Force tree",
+                    itemStyle : {
+                        normal : {
+                            label : {show : true},
+                            nodeStyle : {
+                                brushType : 'both',
+                                borderColor : 'rgba(255,215,0,0.4)',
+                                borderWidth : 1
+                            }
+                        }
+                    },
+                    categories : [ {name : '学校'}, {name : '校区'}, {name : '学院'}, {name : '班级'} ],
+                     nodes :
+                     [{id:0,category:0,name:'0',label:'xx大学',symbolSize:40,ignore:false,flag:true},
+                     {id:1,category:1,name:'1',label:'校区1',symbolSize:30,ignore:true,flag:true},
+                     {id:2,category:2,name:'2',label:'学院1',symbolSize:20,ignore:true,flag:true},
+                     {id:3,category:2,name:'3',label:'学院2',symbolSize:20,ignore:true,flag:true},
+                     {id:4,category:1,name:'4',label:'校区2',symbolSize:30,ignore:true,flag:true},
+                     {id:5,category:2,name:'5',label:'学院1',symbolSize:20,ignore:true,flag:true},
+                     {id:6,category:2,name:'6',label:'学院2',symbolSize:20,ignore:true,flag:true},
+                     {id:7,category:2,name:'7',label:'学院3',symbolSize:20,ignore:true,flag:true},
+                     {id:8,category:1,name:'8',label:'校区3',symbolSize:30,ignore:true,flag:true},
+                     {id:9,category:2,name:'9',label:'学院1',symbolSize:20,ignore:true,flag:true},
+                     {id:10,category:2,name:'10',label:'学院2',symbolSize:20,ignore:true,flag:true},
+                     {id:11,category:2,name:'11',label:'学院3',symbolSize:20,ignore:true,flag:true},
+                     {id:12,category:2,name:'12',label:'学院4',symbolSize:20,ignore:true,flag:true},
+                     {id:13,category:3,name:'13',label:'一班',number:45,techear:'张三',symbolSize:10,ignore:true,flag:true},
+                     {id:14,category:3,name:'14',label:'二班',number:52,techear:'李四',symbolSize:10,ignore:true,flag:true}
+                     ],
+                    links : [ {source : 1,target : 0}, {source : 4,target : 0}, {source : 8,target : 0},
+                              {source : 2,target : 1}, {source : 3,target : 1}, {source : 5,target : 4}, 
+                              {source : 6,target : 4}, {source : 7,target : 4}, {source : 9,target : 8}, 
+                              {source : 10,target : 8}, {source : 11,target : 8}, {source : 12,target : 8},
+                              {source : 13,target : 6}, {source : 14,target : 6} ]
+                } ]
+            };
+            myChart.setOption(option);
+            var ecConfig = require('echarts/config');
+            function openOrFold(param) {
+                var option = myChart.getOption();
+                var nodesOption = option.series[0].nodes;
+                var linksOption = option.series[0].links;
+                var data = param.data;
+                var linksNodes = [];
+
+                var categoryLength = option.series[0].categories.length;
+
+                if (data.category == (categoryLength - 1)) {
+                    alert(data.label);
+                }
+
+                if (data != null && data != undefined) {
+                    if (data.flag) {
+
+                        for ( var m in linksOption) {
+
+                            if (linksOption[m].target == data.id) {
+                                linksNodes.push(linksOption[m].source);
+                            }
+                        }
+                        if (linksNodes != null && linksNodes != undefined) {
+                            for ( var p in linksNodes) {
+                                nodesOption[linksNodes[p]].ignore = false;
+                                nodesOption[linksNodes[p]].flag = true;
+                            }
+                        }
+                        nodesOption[data.id].flag = false;
+                        myChart.setOption(option);
+                    } else {
+
+                        for ( var m in linksOption) {
+
+                            if (linksOption[m].target == data.id) {
+                                linksNodes.push(linksOption[m].source);
+                            }
+                            if (linksNodes != null && linksNodes != undefined) {
+                                for ( var n in linksNodes) {
+                                    if (linksOption[m].target == linksNodes[n]) {
+                                        linksNodes.push(linksOption[m].source);
+                                    }
+                                }
+                            }
+                        }
+                        if (linksNodes != null && linksNodes != undefined) {
+                            for ( var p in linksNodes) {
+                                nodesOption[linksNodes[p]].ignore = true;
+                                nodesOption[linksNodes[p]].flag = true;
+                            }
+                        }
+                        nodesOption[data.id].flag = true;
+                        myChart.setOption(option);
+                    }
+                }
+            }
+            myChart.on(ecConfig.EVENT.CLICK, openOrFold);
+        });
+    </script>
+
+</body>
+</html>
